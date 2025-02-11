@@ -5,6 +5,7 @@ namespace MathMasters.Entities
     [CreateAssetMenu(fileName = "NewQuestion", menuName = "ScriptableObjects/Question")]
     public class Question : ScriptableObject
     {
+        public int Id;
         public string Text;
         public bool IsTextAnswers = true;
         public bool IsQuestionImage = true;
