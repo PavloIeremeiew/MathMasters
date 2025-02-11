@@ -1,6 +1,8 @@
 using MathMasters.Entities;
+using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +10,7 @@ namespace MathMasters
 {
     public class UIQuestion : MonoBehaviour
     {
-        [SerializeField] private Question _question;
+        public Question Question { private get; set; }
 
         [SerializeField] private RectTransform _layoutGroupRoot;
         [SerializeField] private TextMeshProUGUI _numberText;
@@ -18,12 +20,29 @@ namespace MathMasters
         [SerializeField] private Image[] _answersImages;
         [SerializeField] private Button[] _answers;
 
+        private int selectedAnswerIndex = -1;
 
-        private void Start()
+        public event Action OnSelected;
+
+        public bool IsCorect=>
+             selectedAnswerIndex == Question.Correct;
+
+        private void OnEnable()
         {
            Show();
         }
-
+        private void OnDisable()
+        {
+            Clear();
+        }
+        private void Start()
+        {
+            for (int i = 0; i < _answers.Length; i++)
+            {
+                int index = i;
+                _answers[i].onClick.AddListener(() => SelectAnswer(index));
+            }
+        }
         private void Show()
         {
             SetText();
@@ -34,21 +53,21 @@ namespace MathMasters
 
         private void SetText()
         {
-            _numberText.text = $"Task{_question.Id}";
-            _text.text = _question.Text;
+            _numberText.text = $"Task{Question.Id}";
+            _text.text = Question.Text;
         }
         private void SetImage()
         {
-            if (_question.IsQuestionImage)
+            if (Question.IsQuestionImage)
             {
-                _image.sprite = _question.QuestionImage;
+                _image.sprite = Question.QuestionImage;
                 _image.SetNativeSize();
                 _image.gameObject.SetActive(true);
             }
         }
         private void SetAnswers()
         {
-            if (_question.IsTextAnswers)
+            if (Question.IsTextAnswers)
                SetAnswersTexts();
 
             else
@@ -57,9 +76,9 @@ namespace MathMasters
         }
         private void SetAnswersTexts()
         {
-            for (int i = 0; i < _question.AnswersText.Length; i++)
+            for (int i = 0; i < Question.AnswersText.Length; i++)
             {
-                _answersTexts[i].text = _question.AnswersText[i];
+                _answersTexts[i].text = Question.AnswersText[i];
                 _answersTexts[i].gameObject.SetActive(true);
                 
             }
@@ -67,9 +86,9 @@ namespace MathMasters
         }
         private void SetAnswersImages()
         {
-            for (int i = 0; i < _question.AnswersImage.Length; i++)
+            for (int i = 0; i < Question.AnswersImage.Length; i++)
             {
-                _answersImages[i].sprite = _question.AnswersImage[i];
+                _answersImages[i].sprite = Question.AnswersImage[i];
                 _answersImages[i].gameObject.SetActive(true);
                 
             }
@@ -88,6 +107,26 @@ namespace MathMasters
             foreach (Image im in _answersImages)
             {
                 im.gameObject.SetActive(false);
+            }
+
+            selectedAnswerIndex = -1;
+        }
+          
+        private void SelectAnswer(int index)
+        {
+            if (selectedAnswerIndex == -1)
+            {
+                OnSelected?.Invoke();
+            }
+            selectedAnswerIndex = index;
+            HighlightButton(index);
+        }
+        private void HighlightButton(int index)
+        {
+            for (int i = 0; i < _answers.Length; i++)
+            {
+                Color color = (i == index) ? Color.cyan : Color.white;
+                _answers[i].GetComponent<Image>().color = color;
             }
         }
     }
