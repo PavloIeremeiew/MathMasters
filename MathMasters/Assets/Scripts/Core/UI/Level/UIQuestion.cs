@@ -10,6 +10,7 @@ namespace MathMasters
 {
     public class UIQuestion : MonoBehaviour
     {
+        private readonly Vector2 IMAGE_MAX_SIZE = new Vector2(520, 360);
         public Question Question { private get; set; }
 
         [SerializeField] private RectTransform _layoutGroupRoot;
@@ -60,8 +61,7 @@ namespace MathMasters
         {
             if (Question.IsQuestionImage)
             {
-                _image.sprite = Question.QuestionImage;
-                _image.SetNativeSize();
+                _image.ResizeImage(Question.QuestionImage, IMAGE_MAX_SIZE);
                 _image.gameObject.SetActive(true);
             }
         }

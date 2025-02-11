@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 886915248}
-  _player: {fileID: 1160128629}
+  _hero: {fileID: 1160128629}
   _coin: {fileID: 127377304}
 --- !u!1 &1967943950
 GameObject:
@@ -1098,6 +1098,7 @@ MonoBehaviour:
   question: {fileID: 11400000, guid: f38976f4cc384644fb0ba6a288cb47e7, type: 2}
   _uiQuestion: {fileID: 1072873843}
   _continueButton: {fileID: 373566683}
+  _correctAnswerAnimation: {fileID: 1727111654}
 --- !u!1 &2012172479
 GameObject:
   m_ObjectHideFlags: 0
