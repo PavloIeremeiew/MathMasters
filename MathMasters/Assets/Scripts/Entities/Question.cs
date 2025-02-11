@@ -11,8 +11,8 @@ namespace MathMasters.Entities
         public bool IsQuestionImage = true;
         [Range(0, 3)] public int Correct;
 
-        [SerializeField, HideInInspector] private string[] answersText;
-        [SerializeField, HideInInspector] private Sprite[] answersImage;
+        [SerializeField] private string[] answersText;
+        [SerializeField] private Sprite[] answersImage;
         [SerializeField, HideInInspector] private Sprite questionImage;
         
         public Sprite QuestionImage

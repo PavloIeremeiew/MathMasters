@@ -9,9 +9,10 @@ namespace MathMasters
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField] private Question question;//for test
+        [SerializeField] private Question  question;//for test
         [SerializeField] private UIQuestion _uiQuestion;
         [SerializeField] private ContinueButton _continueButton;
+        [SerializeField] private CorrectAnswerAnimation _correctAnswerAnimation;
 
         private void Start()
         {
@@ -34,9 +35,9 @@ namespace MathMasters
         }
         private void Check()
         {
-            _uiQuestion.gameObject.SetActive(false);
-            _continueButton.Deactivation();
-            if (_uiQuestion.IsCorect)
+            bool isCorect = _uiQuestion.IsCorect;
+            EndQuestion();
+            if (isCorect)
             {
                 CorrectCheck();
             }
@@ -47,10 +48,17 @@ namespace MathMasters
             // перевірка чи кінець
             //пвдписатися на продовження наступний квест
         }
+
+        private void EndQuestion()
+        {
+            _uiQuestion.gameObject.SetActive(false);
+            _continueButton.Deactivation();
+        }
+
         private void CorrectCheck()
         {
             // перевірка чи кінець
-            //вивести привітання
+            _correctAnswerAnimation.Show(); //вивести привітання
             //збільшити індекс завдання в списку + прогрес бар
 
         }
