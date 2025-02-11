@@ -13,6 +13,7 @@ namespace MathMasters
         [SerializeField] private UIQuestion _uiQuestion;
         [SerializeField] private ContinueButton _continueButton;
         [SerializeField] private CorrectAnswerAnimation _correctAnswerAnimation;
+        [SerializeField] private WrongAnswerAnimation _wrongAnswerAnimation;
 
         private void Start()
         {
@@ -64,7 +65,7 @@ namespace MathMasters
         }
         private void WrongCheck()
         {
-            //вивести правильну відповідь
+            _wrongAnswerAnimation.Show(question);//вивести правильну відповідь
             //пермістити поточне питання в кінець списку
         }
 

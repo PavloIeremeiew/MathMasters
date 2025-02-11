@@ -30,7 +30,7 @@ namespace MathMasters
 
         private void OnEnable()
         {
-           Show();
+           StartCoroutine(Show());
         }
         private void OnDisable()
         {
@@ -44,11 +44,12 @@ namespace MathMasters
                 _answers[i].onClick.AddListener(() => SelectAnswer(index));
             }
         }
-        private void Show()
+        private IEnumerator Show()
         {
             SetText();
             SetImage();
             SetAnswers();
+            yield return null;
             LayoutRebuilder.ForceRebuildLayoutImmediate(_layoutGroupRoot);
         }
 
