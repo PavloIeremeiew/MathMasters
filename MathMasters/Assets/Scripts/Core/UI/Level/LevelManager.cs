@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace MathMasters
 {
@@ -15,6 +16,7 @@ namespace MathMasters
         [SerializeField] private ContinueButton _continueButton;
         [SerializeField] private CorrectAnswerAnimation _correctAnswerAnimation;
         [SerializeField] private WrongAnswerAnimation _wrongAnswerAnimation;
+        [SerializeField] private ProgressBar _progressBar;
 
         private Question[] _qustionArray;
         private Question _currentQustion;
@@ -24,6 +26,7 @@ namespace MathMasters
 
         private void Start()
         {
+            _progressBar.Init();
             SetUpLevel();
             SetUpContinueButton();
         }
@@ -92,7 +95,7 @@ namespace MathMasters
         private void CorrectCheck()
         {
             _currentQustionIndex++;//збільшити індекс завдання в списку
-            //прогрес бар
+            _progressBar.SetProgress(_currentQustionIndex); //прогрес бар
             if (_currentQustionIndex >= _qustionArray.Length) // перевірка чи кінець
             {
                 Debug.Log("Win");
@@ -101,10 +104,6 @@ namespace MathMasters
             {
                 _correctAnswerAnimation.Show(); //вивести привітання
             }
-
-            
-            
-            
         }
         private void WrongCheck()
         {
