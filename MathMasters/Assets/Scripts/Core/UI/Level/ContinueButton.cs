@@ -8,6 +8,7 @@ namespace MathMasters
     public class ContinueButton: MonoBehaviour
     {
         private const string CHECK_TITLE = "Check";
+        private const string CONTINUE_TITLE = "Continue";
 
         [SerializeField]private Button _continueButton;
         private TextMeshProUGUI _continueButtonText;
@@ -17,6 +18,7 @@ namespace MathMasters
         [SerializeField] private Sprite _deactiveButton;
 
         public UnityAction Check {  get; set; }
+        public UnityAction Continue {  get; set; }
         private void Start()
         {
             SetContinueButton();
@@ -35,10 +37,21 @@ namespace MathMasters
         }
         public void ReadyForCheck()
         {
-            _continueButtonText.text = CHECK_TITLE;
+            ActivateButton(Check, CHECK_TITLE);
+        }
+
+        public void ReadyForContinue()
+        {
+            ActivateButton(Continue, CONTINUE_TITLE);
+        }
+
+        private void ActivateButton(UnityAction sub, string Title)
+        {
+            _continueButtonText.text = Title;
             _continueButtonImage.sprite = _activeButton;
             _continueButton.interactable = true;
-            _continueButton.onClick.AddListener(Check);
+            _continueButton.onClick.AddListener(sub);
         }
+
     }
 }

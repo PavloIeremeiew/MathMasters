@@ -111,6 +111,7 @@ namespace MathMasters
             }
 
             selectedAnswerIndex = -1;
+            HighlightButton(selectedAnswerIndex);
         }
           
         private void SelectAnswer(int index)

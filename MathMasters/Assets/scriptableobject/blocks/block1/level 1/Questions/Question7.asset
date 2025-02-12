@@ -17,7 +17,11 @@ MonoBehaviour:
     he need to pay?
   IsTextAnswers: 1
   IsQuestionImage: 1
-  Correct: 0
-  answersText: []
+  Correct: 2
+  answersText:
+  - 15
+  - 10
+  - 12
+  - 7
   answersImage: []
   questionImage: {fileID: 21300000, guid: 8abb011a4049d6940aa9fed1729f6473, type: 3}
