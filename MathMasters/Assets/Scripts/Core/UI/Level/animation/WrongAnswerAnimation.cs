@@ -46,10 +46,8 @@ namespace MathMasters
                 _contextImage.ResizeImage(question.QuestionImage, CONTEXT_IMAGE_MAX_SIZE);
                 _contextImage.gameObject.SetActive(true);
             }
-            else
-            {
-                _context.text = question.Text;
-            }
+            _context.text = question.Text;
+            
         }
 
         private void SetUpAnswer(Question question)

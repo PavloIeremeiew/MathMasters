@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace MathMasters.Entities
 {
-    [CreateAssetMenu(fileName = "NewQuestion", menuName = "ScriptableObjects/Question")]
+    [CreateAssetMenu(fileName = "Question", menuName = "ScriptableObjects/Question")]
     public class Question : ScriptableObject
     {
         public int Id;

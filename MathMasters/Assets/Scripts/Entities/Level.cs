@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MathMasters.Entities
 {
-    [CreateAssetMenu(fileName = "NewLevel", menuName = "ScriptableObjects/Level")]
+    [CreateAssetMenu(fileName = "Level", menuName = "ScriptableObjects/Level")]
     public class Level : ScriptableObject
     {
         public Question[] Questions;
