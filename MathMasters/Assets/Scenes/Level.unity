@@ -178,11 +178,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 53520895906160274, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
   m_PrefabInstance: {fileID: 649686376}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &148913006 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 53520895906160276, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
-  m_PrefabInstance: {fileID: 649686376}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &230723966
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hero: {fileID: 1512249845}
-  particles: {fileID: 148913006}
   _firstAimTime: 0.75
   _secondAimTime: 0.25
 --- !u!1001 &649686376
@@ -691,11 +685,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 53520895484323245, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 53520895701656245, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 53520895906160274, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: m_LocalPosition.x
@@ -743,15 +737,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53520895906160276, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 53520896666264180, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 53520896913707597, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

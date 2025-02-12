@@ -8,7 +8,6 @@ namespace MathMasters
     public class VictoryAnimation : MonoBehaviour
     {
         [SerializeField] private RectTransform _hero; 
-        [SerializeField] private ParticleSystem _particles; 
         [SerializeField] private float _firstAimTime=0.75f; 
         [SerializeField] private float _secondAimTime=0.25f; 
 
@@ -31,11 +30,7 @@ namespace MathMasters
                 .OnComplete(() =>
                 {
                     _hero.DOAnchorPosY(_hero.anchoredPosition.y + 50, _secondAimTime).SetEase(Ease.OutQuad)
-                        .SetLoops(2, LoopType.Yoyo)
-                        .OnComplete(() =>
-                        {
-                            _particles.Play();
-                        });
+                        .SetLoops(2, LoopType.Yoyo);
                 });
         }
     }
