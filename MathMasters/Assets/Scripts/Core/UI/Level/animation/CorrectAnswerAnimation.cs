@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 using static UnityEngine.ParticleSystem;
 
 namespace MathMasters
@@ -13,6 +14,8 @@ namespace MathMasters
         [SerializeField] private RectTransform _hero;
         [SerializeField] private RectTransform _coin;
         [SerializeField] private ParticleSystem _particles;
+
+        [Inject] private SoundManager _soundManager;
 
         private Vector2 _startHeroPos;
         private float _endHeroPosX;
@@ -30,6 +33,7 @@ namespace MathMasters
         public void Show()
         {
             _content.SetActive(true);
+            _soundManager.PlayCorrectSound();
             PlayAnimation();
         }
 
@@ -70,6 +74,7 @@ namespace MathMasters
         }
         private void ParticlesAnim()
         {
+            _soundManager.PlayCoinSound();
             _particles.Play();
         }
     }

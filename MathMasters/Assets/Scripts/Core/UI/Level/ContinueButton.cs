@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Zenject;
 
 namespace MathMasters
 {
@@ -17,6 +18,8 @@ namespace MathMasters
 
         [SerializeField] private Sprite _activeButton;
         [SerializeField] private Sprite _deactiveButton;
+
+        [Inject] private SoundManager _soundManager;
 
         public UnityAction Check {  get; set; }
         public UnityAction Continue {  get; set; }
@@ -58,6 +61,7 @@ namespace MathMasters
             _continueButtonImage.sprite = _activeButton;
             _continueButton.interactable = true;
             _continueButton.onClick.AddListener(sub);
+            _continueButton.onClick.AddListener(_soundManager.PlayClickSound);
         }
 
     }

@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace MathMasters
 {
@@ -21,6 +22,7 @@ namespace MathMasters
         [SerializeField] private Image[] _answersImages;
         [SerializeField] private Button[] _answers;
 
+        [Inject] private SoundManager _soundManager;
         private int selectedAnswerIndex = -1;
 
         public event Action OnSelected;
@@ -120,6 +122,7 @@ namespace MathMasters
             {
                 OnSelected?.Invoke();
             }
+            _soundManager.PlaySelectSound();
             selectedAnswerIndex = index;
             HighlightButton(index);
         }

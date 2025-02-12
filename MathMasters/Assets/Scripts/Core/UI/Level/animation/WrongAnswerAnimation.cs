@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace MathMasters
 {
@@ -21,6 +22,7 @@ namespace MathMasters
         [SerializeField] private Image _contextImage;
         [SerializeField] private Image _answerImage;
 
+        [Inject] private SoundManager _soundManager;
 
         public void Hide()
         {
@@ -37,6 +39,7 @@ namespace MathMasters
             _content.SetActive(true);
             SetUpContext(question);
             SetUpAnswer(question);
+            _soundManager.PlayWrongSound();
             LayoutRebuilder.ForceRebuildLayoutImmediate(_layoutRoot);
         }
         private void SetUpContext(Question question)

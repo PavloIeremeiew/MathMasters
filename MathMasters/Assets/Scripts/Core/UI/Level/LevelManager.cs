@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Zenject;
 
 namespace MathMasters
 {
@@ -18,6 +19,7 @@ namespace MathMasters
         [SerializeField] private WrongAnswerAnimation _wrongAnswerAnimation;
         [SerializeField] private VictoryScreen _victoryScreen;
         [SerializeField] private ProgressBar _progressBar;
+
 
         private ITimer _timer = new Timer();
         private Question[] _qustionArray;

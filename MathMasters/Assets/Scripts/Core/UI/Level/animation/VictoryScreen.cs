@@ -1,6 +1,7 @@
 using MathMasters.Entities;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace MathMasters
 {
@@ -11,6 +12,9 @@ namespace MathMasters
         [SerializeField] private TextMeshProUGUI _time;
         [SerializeField] private TextMeshProUGUI _correct;
         [SerializeField] private TextMeshProUGUI _mistakes;
+
+        [Inject] private SoundManager _soundManager;
+
         public void Show(Question[] questions, ITimer timer)
         {
             _coinCount.text = questions.Length.ToString();
@@ -19,6 +23,7 @@ namespace MathMasters
             _mistakes.text = mistakesCount.ToString();
             _correct.text = (questions.Length-mistakesCount).ToString();
             _content.SetActive(true);
+            _soundManager.PlayWinSound();
         }
 
         private int countMistakes(Question[] questions)
