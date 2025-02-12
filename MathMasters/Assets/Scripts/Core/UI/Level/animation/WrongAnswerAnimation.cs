@@ -27,7 +27,7 @@ namespace MathMasters
             _content.SetActive(false);
 
             _contextImage.gameObject.SetActive(false);
-            _contextImage.gameObject.SetActive(false);
+            _answerImage.gameObject.SetActive(false);
             _context.text = string.Empty;
             _answerText.text = ANSWER_TEXT;
         }

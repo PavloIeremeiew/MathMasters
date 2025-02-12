@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 namespace MathMasters
 {
@@ -11,6 +12,7 @@ namespace MathMasters
         [SerializeField] private GameObject _content;
         [SerializeField] private RectTransform _hero;
         [SerializeField] private RectTransform _coin;
+        [SerializeField] private ParticleSystem _particles;
 
         private Vector2 _startHeroPos;
         private float _endHeroPosX;
@@ -62,8 +64,13 @@ namespace MathMasters
         }
 
         private void CoinAnim()
-        {
+        {            
             _coin.DOScale(_endCoinScale, 0.6f).SetEase(Ease.OutBack).SetDelay(0.3f);
+            Invoke(nameof(ParticlesAnim), 0.3f);
+        }
+        private void ParticlesAnim()
+        {
+            _particles.Play();
         }
     }
 }
