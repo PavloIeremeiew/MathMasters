@@ -66,7 +66,7 @@ namespace MathMasters
         private void CoinAnim()
         {            
             _coin.DOScale(_endCoinScale, 0.6f).SetEase(Ease.OutBack).SetDelay(0.3f);
-            Invoke(nameof(ParticlesAnim), 0.3f);
+            Invoke(nameof(ParticlesAnim), 0.35f);
         }
         private void ParticlesAnim()
         {
