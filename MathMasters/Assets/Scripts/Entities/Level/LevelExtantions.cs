@@ -7,11 +7,12 @@ namespace MathMasters.Entities
 {
     public static class LevelExtantions 
     {
-        public static void SetQuestionId(this Question[] level)
+        public static void SetUpLevel(this Question[] level)
         {
             for (int i = 0; i < level.Length; i++)
             {
                 level[i].Id = i + 1;
+                level[i].IsMistakes = false;
             }
         }
         public static void MoveToEnd(this Question[] array, int index)

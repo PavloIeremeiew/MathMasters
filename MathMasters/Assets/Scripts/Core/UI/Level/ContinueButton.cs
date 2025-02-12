@@ -9,6 +9,7 @@ namespace MathMasters
     {
         private const string CHECK_TITLE = "Check";
         private const string CONTINUE_TITLE = "Continue";
+        private const string END_TITLE = "Claim";
 
         [SerializeField]private Button _continueButton;
         private TextMeshProUGUI _continueButtonText;
@@ -19,6 +20,8 @@ namespace MathMasters
 
         public UnityAction Check {  get; set; }
         public UnityAction Continue {  get; set; }
+        public UnityAction End {  get; set; }
+
         private void Start()
         {
             SetContinueButton();
@@ -43,6 +46,10 @@ namespace MathMasters
         public void ReadyForContinue()
         {
             ActivateButton(Continue, CONTINUE_TITLE);
+        }
+        public void ReadyForEnd()
+        {
+            ActivateButton(End, END_TITLE);
         }
 
         private void ActivateButton(UnityAction sub, string Title)
