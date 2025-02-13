@@ -1,6 +1,5 @@
 using MathMasters.Core;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace MathMasters.UI
 {
@@ -17,7 +16,7 @@ namespace MathMasters.UI
         private void OnEnable()
         {
             UIQuestion.OnSelected += _continueButton.ReadyForCheck;
-            QuestionManager.OnReadyForContinue +=  _continueButton.ReadyForContinue;
+            QuestionManager.OnReadyForContinue += _continueButton.ReadyForContinue;
             QuestionManager.OnLevelComplete += (q, s) => _continueButton.ReadyForEnd();
             QuestionManager.OnCorrectAnswer += _progressBar.SetProgress;
             QuestionManager.OnLevelComplete += (q, s) => _progressBar.SetProgress(q.Length);
