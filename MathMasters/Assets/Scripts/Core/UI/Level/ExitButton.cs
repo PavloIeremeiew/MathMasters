@@ -1,3 +1,4 @@
+using MathMasters.Services;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -10,7 +11,9 @@ namespace MathMasters
         [SerializeField] private GameObject _exitMenu;
         [SerializeField] private Button _confirmButton;
         [SerializeField] private Button _dismissButton;
+
         [Inject] private SoundManager _soundManager;
+        [Inject] private ISceneNavigator _sceneNavigator;
 
         private void Start() {
             SetUpButtons();
@@ -32,7 +35,6 @@ namespace MathMasters
         private void OpenExitMenu()
         {
             _exitMenu.SetActive(true);
-            Debug.Log("OpenExitMenu");
         }
         private void CloseExitMenu() 
         {
@@ -40,7 +42,7 @@ namespace MathMasters
         }
         private void Exit()
         {
-            Debug.Log("Exit");
+            _sceneNavigator.OpenMenu();
         }
 
     }

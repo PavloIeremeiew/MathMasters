@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MathMasters
+namespace MathMasters.Services
 {
     public interface ITimer 
     {

@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace MathMasters
+namespace MathMasters.Services
 {
-    public interface ISaver 
+    public interface ISaver
     {
         public void SaveMoney(int amount);
         public int GetMoney();

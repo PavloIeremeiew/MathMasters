@@ -1,35 +1,58 @@
+using System.Drawing;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
-public static class ImageExtensions
+namespace MathMasters.Services
 {
-    public static void ResizeImage(this Image targetImage, Sprite sprite, Vector2 maxSize)
+    public static class ImageExtensions
     {
-        if (targetImage == null || sprite == null) return;
-
-        RectTransform rectTransform = targetImage.rectTransform;
-
-        Vector2 spriteSize = new Vector2(sprite.texture.width, sprite.texture.height);
-        float aspectRatio = spriteSize.x / spriteSize.y;
-
-        float width = spriteSize.x;
-        float height = spriteSize.y;
-
-        if (width > maxSize.x)
+        public static void ResizeImage(this Image targetImage, Sprite sprite, Vector2 maxSize)
         {
-            float scaleFactor = maxSize.x / width;
-            width *= scaleFactor;
-            height *= scaleFactor;
-        }
-        if (height > maxSize.y)
-        {
-            float scaleFactor = maxSize.y / height;
-            width *= scaleFactor;
-            height *= scaleFactor;
+            if (targetImage == null || sprite == null) 
+                return;
+
+            Vector2 newSpriteSize = SetNewSpriteSize(sprite, maxSize);
+            SetSize(targetImage, sprite, newSpriteSize);;
         }
 
-        rectTransform.sizeDelta = new Vector2(width, height);
-        targetImage.sprite = sprite;
-        targetImage.SetNativeSize();
+        private static Vector2 SetNewSpriteSize(Sprite sprite, Vector2 maxSize)
+        {
+            Vector2 newSpriteSize = new Vector2(sprite.texture.width, sprite.texture.height);
+            newSpriteSize = ChekByWight(newSpriteSize, maxSize);
+            newSpriteSize =  ChekByHight(newSpriteSize, maxSize);
+
+            return newSpriteSize;
+        }
+        private static Vector2 ChekByWight(Vector2 newSpriteSize, Vector2 maxSize)
+        {
+            if (newSpriteSize.x > maxSize.x)
+            {
+                float scaleFactor = maxSize.x / newSpriteSize.x;
+                newSpriteSize.x *= scaleFactor;
+                newSpriteSize.y *= scaleFactor;
+            }
+
+            return newSpriteSize;
+        }
+
+        private static Vector2 ChekByHight(Vector2 newSpriteSize, Vector2 maxSize)
+        {
+            if (newSpriteSize.y > maxSize.y)
+            {
+                float scaleFactor = maxSize.y / newSpriteSize.y;
+                newSpriteSize.x *= scaleFactor;
+                newSpriteSize.y *= scaleFactor;
+            }
+
+            return newSpriteSize;
+        }
+
+        private static void SetSize(Image targetImage, Sprite sprite, Vector2 size)
+        {
+            targetImage.rectTransform.sizeDelta = size;
+            targetImage.sprite = sprite;
+            targetImage.SetNativeSize();
+        }
     }
 }

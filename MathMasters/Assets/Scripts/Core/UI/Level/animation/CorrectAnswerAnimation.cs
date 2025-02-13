@@ -1,10 +1,7 @@
 using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using MathMasters.Services;
 using UnityEngine;
 using Zenject;
-using static UnityEngine.ParticleSystem;
 
 namespace MathMasters
 {
@@ -20,7 +17,7 @@ namespace MathMasters
         private Vector2 _startHeroPos;
         private float _endHeroPosX;
         private readonly Vector3 _startHeroRotation = Vector3.zero;
-        private readonly Vector3 _endHeroRotation= new Vector3(0, 0, -15);
+        private readonly Vector3 _endHeroRotation = new Vector3(0, 0, -15);
 
         private readonly Vector3 _startCoinScale = Vector3.zero;
         private readonly float _endCoinScale = 1;
@@ -68,18 +65,18 @@ namespace MathMasters
         }
 
         private void CoinAnim()
-        {            
+        {
             _coin.DOScale(_endCoinScale, 0.6f).SetEase(Ease.OutBack).SetDelay(0.3f);
             Invoke(nameof(ParticlesAnim), 0.35f);
         }
         private void ParticlesAnim()
         {
-            if(_content.activeSelf)
+            if (_content.activeSelf)
             {
                 _soundManager.PlayCoinSound();
                 _particles.Play();
             }
-            
+
         }
     }
 }

@@ -1,30 +1,32 @@
-using MathMasters;
 using System;
 
-public class Timer: ITimer
+namespace MathMasters.Services
 {
-    private DateTime _startTime;
-    private DateTime _endTime;
-    private bool _isRunning;
-
-    public void Start()
+    public class Timer : ITimer
     {
-        _startTime = DateTime.Now;
-        _isRunning = true;
-    }
+        private DateTime _startTime;
+        private DateTime _endTime;
+        private bool _isRunning;
 
-    public void Stop()
-    {
-        if (_isRunning)
+        public void Start()
         {
-            _endTime = DateTime.Now;
-            _isRunning = false;
+            _startTime = DateTime.Now;
+            _isRunning = true;
         }
-    }
 
-    public string GetElapsedTime()
-    {
-        TimeSpan elapsed = _isRunning ? DateTime.Now - _startTime : _endTime - _startTime;
-        return $"{(int)elapsed.TotalMinutes:D2}:{elapsed.Seconds:D2}";
+        public void Stop()
+        {
+            if (_isRunning)
+            {
+                _endTime = DateTime.Now;
+                _isRunning = false;
+            }
+        }
+
+        public string GetElapsedTime()
+        {
+            TimeSpan elapsed = _isRunning ? DateTime.Now - _startTime : _endTime - _startTime;
+            return $"{(int)elapsed.TotalMinutes:D2}:{elapsed.Seconds:D2}";
+        }
     }
 }

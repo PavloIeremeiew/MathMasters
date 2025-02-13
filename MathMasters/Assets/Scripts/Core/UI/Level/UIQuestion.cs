@@ -1,8 +1,8 @@
 using MathMasters.Entities;
+using MathMasters.Services;
 using System;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -27,12 +27,12 @@ namespace MathMasters
 
         public event Action OnSelected;
 
-        public bool IsCorect=>
+        public bool IsCorect =>
              selectedAnswerIndex == Question.Correct;
 
         private void OnEnable()
         {
-           StartCoroutine(Show());
+            StartCoroutine(Show());
         }
         private void OnDisable()
         {
@@ -71,7 +71,7 @@ namespace MathMasters
         private void SetAnswers()
         {
             if (Question.IsTextAnswers)
-               SetAnswersTexts();
+                SetAnswersTexts();
 
             else
                 SetAnswersImages();
@@ -83,9 +83,9 @@ namespace MathMasters
             {
                 _answersTexts[i].text = Question.AnswersText[i];
                 _answersTexts[i].gameObject.SetActive(true);
-                
+
             }
-            
+
         }
         private void SetAnswersImages()
         {
@@ -93,7 +93,7 @@ namespace MathMasters
             {
                 _answersImages[i].sprite = Question.AnswersImage[i];
                 _answersImages[i].gameObject.SetActive(true);
-                
+
             }
         }
 
@@ -115,7 +115,7 @@ namespace MathMasters
             selectedAnswerIndex = -1;
             HighlightButton(selectedAnswerIndex);
         }
-          
+
         private void SelectAnswer(int index)
         {
             if (selectedAnswerIndex == -1)

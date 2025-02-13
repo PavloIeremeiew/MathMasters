@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MathMasters
+namespace MathMasters.Services
 {
     public class SaverWithPlayerPrefs : ISaver
     {

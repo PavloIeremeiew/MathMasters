@@ -1,13 +1,7 @@
 using MathMasters.Entities;
+using MathMasters.Services;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Zenject;
 
 namespace MathMasters
 {
@@ -25,7 +19,7 @@ namespace MathMasters
         private ITimer _timer = new Timer();
         private QuestionDTO[] _qustionArray;
         private QuestionDTO _currentQustion;
-        private int _currentQustionIndex=0;
+        private int _currentQustionIndex = 0;
 
         public event Action OnReadyForContinue;
         public event Action OnReadyForEnd;
@@ -53,8 +47,8 @@ namespace MathMasters
         private void SetUpLevel()
         {
             _qustionArray = _step.SetUpLevel();
-           SetQuestion();
-        }       
+            SetQuestion();
+        }
 
         private void SetQuestion()
         {
@@ -63,7 +57,7 @@ namespace MathMasters
             _uiQuestion.gameObject.SetActive(true);
             _continueButton.Deactivation();
         }
-        
+
         private void SetUpContinueButton()
         {
             _continueButton.Check = Check;
@@ -71,7 +65,7 @@ namespace MathMasters
             _continueButton.End = End;
         }
 
-        
+
 
         private void Check()
         {
@@ -86,13 +80,13 @@ namespace MathMasters
                 WrongCheck();
             }
 
-            if (_currentQustionIndex < _qustionArray.Length) 
+            if (_currentQustionIndex < _qustionArray.Length)
             {
                 OnReadyForContinue?.Invoke();
-            } 
+            }
         }
         private void Continue()
-        {            
+        {
             _correctAnswerAnimation.Hide();
             _wrongAnswerAnimation.Hide();
             SetQuestion();
@@ -113,13 +107,13 @@ namespace MathMasters
         {
             _currentQustionIndex++;
             _progressBar.SetProgress(_currentQustionIndex);
-            if (_currentQustionIndex >= _qustionArray.Length) 
+            if (_currentQustionIndex >= _qustionArray.Length)
             {
                 VictoryScreen();
             }
             else
             {
-                _correctAnswerAnimation.Show(); 
+                _correctAnswerAnimation.Show();
             }
         }
         private void WrongCheck()
