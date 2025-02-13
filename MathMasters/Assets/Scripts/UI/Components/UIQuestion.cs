@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace MathMasters
+namespace MathMasters.UI
 {
     public class UIQuestion : MonoBehaviour
     {
@@ -25,7 +25,7 @@ namespace MathMasters
         [Inject] private SoundManager _soundManager;
         private int selectedAnswerIndex = -1;
 
-        public event Action OnSelected;
+        public static event Action OnSelected;
 
         public bool IsCorect =>
              selectedAnswerIndex == Question.Correct;
@@ -83,9 +83,7 @@ namespace MathMasters
             {
                 _answersTexts[i].text = Question.AnswersText[i];
                 _answersTexts[i].gameObject.SetActive(true);
-
             }
-
         }
         private void SetAnswersImages()
         {
@@ -99,33 +97,58 @@ namespace MathMasters
 
         private void Clear()
         {
+            selectedAnswerIndex = -1;
+            ClearCondition();
+            ClearButtons();
+        }
+        private void ClearCondition()
+        {
             _numberText.text = string.Empty;
             _text.text = string.Empty;
             _image.gameObject.SetActive(false);
+        }
 
+        private void ClearButtons()
+        {
+            ClearButtonsText();
+            ClearButtonsImages();
+            HighlightButton(selectedAnswerIndex);
+        }
+        private void ClearButtonsText()
+        {
             foreach (TextMeshProUGUI tx in _answersTexts)
             {
                 tx.gameObject.SetActive(false);
             }
+        }
+        private void ClearButtonsImages()
+        {
             foreach (Image im in _answersImages)
             {
                 im.gameObject.SetActive(false);
             }
-
-            selectedAnswerIndex = -1;
-            HighlightButton(selectedAnswerIndex);
         }
 
         private void SelectAnswer(int index)
+        {
+            CheckOnSelect();
+            SetButtoneffcts(index);
+            selectedAnswerIndex = index;
+        }
+        private void CheckOnSelect()
         {
             if (selectedAnswerIndex == -1)
             {
                 OnSelected?.Invoke();
             }
+        }
+
+        private void SetButtoneffcts(int index)
+        {
             _soundManager.PlaySelectSound();
-            selectedAnswerIndex = index;
             HighlightButton(index);
         }
+
         private void HighlightButton(int index)
         {
             for (int i = 0; i < _answers.Length; i++)

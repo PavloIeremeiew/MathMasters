@@ -474,7 +474,9 @@ GameObject:
   - component: {fileID: 1967943953}
   - component: {fileID: 1967943952}
   - component: {fileID: 1967943951}
-  - component: {fileID: 1967943955}
+  - component: {fileID: 1967943957}
+  - component: {fileID: 1967943956}
+  - component: {fileID: 1967943958}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -571,7 +573,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1967943955
+--- !u!114 &1967943956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,16 +582,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1967943950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31a56c13f8a8844eb8839863597c80e, type: 3}
+  m_Script: {fileID: 11500000, guid: e51f0f7908445ef40b38426a9e0f86cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _correctAnswerAnimation: {fileID: 1727111654}
+  _wrongAnswerAnimation: {fileID: 1670202467}
+  _victoryScreen: {fileID: 5126252}
+--- !u!114 &1967943957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967943950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bb3f955faa9bb4aa724d48b88f3cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _continueButton: {fileID: 373566683}
+  _progressBar: {fileID: 1106023911}
+--- !u!114 &1967943958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967943950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c128dc32a5cfd1c429391522c0061346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _step: {fileID: 11400000, guid: e40b24ddd3eec1744ba3e4cf508d9f1f, type: 2}
   _uiQuestion: {fileID: 1072873843}
-  _continueButton: {fileID: 373566683}
-  _correctAnswerAnimation: {fileID: 1727111654}
-  _wrongAnswerAnimation: {fileID: 1670202467}
-  _victoryScreen: {fileID: 5126252}
-  _progressBar: {fileID: 1106023911}
 --- !u!1 &2012172479
 GameObject:
   m_ObjectHideFlags: 0

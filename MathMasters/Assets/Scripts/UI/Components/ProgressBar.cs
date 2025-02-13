@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MathMasters
+namespace MathMasters.UI
 {
     public class ProgressBar : MonoBehaviour
     {

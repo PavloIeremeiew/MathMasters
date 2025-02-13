@@ -3,7 +3,7 @@ using MathMasters.Services;
 using UnityEngine;
 using Zenject;
 
-namespace MathMasters
+namespace MathMasters.Animation
 {
     public class CorrectAnswerAnimation : MonoBehaviour
     {

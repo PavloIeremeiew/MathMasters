@@ -192,6 +192,7 @@ MonoBehaviour:
   _hero: {fileID: 4189188587638922331}
   _firstAimTime: 0.75
   _secondAimTime: 0.25
+  _particles: {fileID: 2955817046398879823}
 --- !u!1 &2753778778619242501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1020,7 @@ MonoBehaviour:
   _time: {fileID: 7764044090996733829}
   _correct: {fileID: 2847341868783216172}
   _mistakes: {fileID: 5079359437710804698}
+  _victoryAnimation: {fileID: 1755435391476366529}
 --- !u!1 &8103197455806005883
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,13 +1242,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8618419792443798369}
     m_Modifications:
+    - target: {fileID: 53520895484323242, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 53520895484323245, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53520895701656242, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 53520895701656245, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 53520895906160274, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1294,15 +1304,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53520895906160276, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53520895906160277, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 53520896666264180, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53520896666264181, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53520896913707594, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 53520896913707597, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1312,5 +1334,10 @@ PrefabInstance:
 --- !u!4 &2955817046398879817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 53520895906160274, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
+  m_PrefabInstance: {fileID: 3007013710937609947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2955817046398879823 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 53520895906160276, guid: f7c69f9f4ab166f4a9cd0aef7902d641, type: 3}
   m_PrefabInstance: {fileID: 3007013710937609947}
   m_PrefabAsset: {fileID: 0}

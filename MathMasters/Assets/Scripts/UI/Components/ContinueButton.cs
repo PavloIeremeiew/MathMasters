@@ -1,11 +1,12 @@
 using MathMasters.Services;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using Zenject;
 
-namespace MathMasters
+namespace MathMasters.UI
 {
     public class ContinueButton: MonoBehaviour
     {
@@ -22,11 +23,11 @@ namespace MathMasters
 
         [Inject] private SoundManager _soundManager;
 
-        public UnityAction Check {  get; set; }
-        public UnityAction Continue {  get; set; }
-        public UnityAction End {  get; set; }
+        public static Action Check;
+        public static Action Continue;
+        public static Action End;
 
-        private void Start()
+        private void Awake()
         {
             SetContinueButton();
         }
@@ -44,16 +45,29 @@ namespace MathMasters
         }
         public void ReadyForCheck()
         {
-            ActivateButton(Check, CHECK_TITLE);
+            ActivateButton(OnCheck, CHECK_TITLE);
         }
-
+        private void OnCheck()
+        {
+            OnClick(Check);
+        }
         public void ReadyForContinue()
         {
-            ActivateButton(Continue, CONTINUE_TITLE);
+            ActivateButton(OnContinue, CONTINUE_TITLE);
+        }
+        private void OnContinue()
+        {
+            OnClick(Continue);
+        }
+        private void OnClick(Action action)
+        {
+            Deactivation();
+            action?.Invoke();
+            
         }
         public void ReadyForEnd()
         {
-            ActivateButton(End, END_TITLE);
+            ActivateButton(() => End?.Invoke(), END_TITLE);
         }
 
         private void ActivateButton(UnityAction sub, string Title)

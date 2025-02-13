@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace MathMasters
+namespace MathMasters.UI
 {
     public class ExitButton : MonoBehaviour
     {

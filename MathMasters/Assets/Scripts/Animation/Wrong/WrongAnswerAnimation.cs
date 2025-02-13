@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace MathMasters
+namespace MathMasters.Animation
 {
     public class WrongAnswerAnimation : MonoBehaviour
     {
