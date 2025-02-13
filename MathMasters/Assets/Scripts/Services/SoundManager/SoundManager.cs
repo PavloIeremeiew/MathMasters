@@ -28,4 +28,11 @@ public class SoundManager : MonoBehaviour
             _effectsSource.PlayOneShot(clip);
         }
     }
+    public void Stop()
+    {
+        if (_effectsSource != null && _effectsSource.isPlaying)
+        {
+            _effectsSource.Stop();
+        }
+    }
 }

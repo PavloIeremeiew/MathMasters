@@ -2,6 +2,7 @@ using MathMasters.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,7 +52,16 @@ namespace MathMasters
 
         private void SetUpLevel()
         {
-            _qustionArray=(Question[])_step.Questions.Clone();
+            _qustionArray = _step.Questions.Select(q => new Question
+            {
+                Text = q.Text,
+                IsTextAnswers = q.IsTextAnswers,
+                IsQuestionImage = q.IsQuestionImage,
+                QuestionImage = q.QuestionImage,
+                AnswersText = q.AnswersText != null ? (string[])q.AnswersText.Clone() : null,
+                AnswersImage = q.AnswersImage != null ? (Sprite[])q.AnswersImage.Clone() : null,
+                Correct = q.Correct
+            }).ToArray();
             _qustionArray.SetUpLevel();
            SetQuestion();
         }       

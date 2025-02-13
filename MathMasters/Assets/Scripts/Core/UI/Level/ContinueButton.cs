@@ -60,8 +60,9 @@ namespace MathMasters
             _continueButtonText.text = Title;
             _continueButtonImage.sprite = _activeButton;
             _continueButton.interactable = true;
-            _continueButton.onClick.AddListener(sub);
+            _continueButton.onClick.AddListener(_soundManager.Stop);
             _continueButton.onClick.AddListener(_soundManager.PlayClickSound);
+            _continueButton.onClick.AddListener(sub);
         }
 
     }

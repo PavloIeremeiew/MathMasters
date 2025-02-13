@@ -74,8 +74,12 @@ namespace MathMasters
         }
         private void ParticlesAnim()
         {
-            _soundManager.PlayCoinSound();
-            _particles.Play();
+            if(_content.activeSelf)
+            {
+                _soundManager.PlayCoinSound();
+                _particles.Play();
+            }
+            
         }
     }
 }
