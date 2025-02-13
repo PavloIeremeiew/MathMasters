@@ -23,8 +23,8 @@ namespace MathMasters
 
 
         private ITimer _timer = new Timer();
-        private Question[] _qustionArray;
-        private Question _currentQustion;
+        private QuestionDTO[] _qustionArray;
+        private QuestionDTO _currentQustion;
         private int _currentQustionIndex=0;
 
         public event Action OnReadyForContinue;
@@ -52,17 +52,7 @@ namespace MathMasters
 
         private void SetUpLevel()
         {
-            _qustionArray = _step.Questions.Select(q => new Question
-            {
-                Text = q.Text,
-                IsTextAnswers = q.IsTextAnswers,
-                IsQuestionImage = q.IsQuestionImage,
-                QuestionImage = q.QuestionImage,
-                AnswersText = q.AnswersText != null ? (string[])q.AnswersText.Clone() : null,
-                AnswersImage = q.AnswersImage != null ? (Sprite[])q.AnswersImage.Clone() : null,
-                Correct = q.Correct
-            }).ToArray();
-            _qustionArray.SetUpLevel();
+            _qustionArray = _step.SetUpLevel();
            SetQuestion();
         }       
 

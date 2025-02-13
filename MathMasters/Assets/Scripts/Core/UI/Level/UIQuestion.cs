@@ -12,7 +12,7 @@ namespace MathMasters
     public class UIQuestion : MonoBehaviour
     {
         private readonly Vector2 IMAGE_MAX_SIZE = new Vector2(520, 360);
-        public Question Question { private get; set; }
+        public QuestionDTO Question { private get; set; }
 
         [SerializeField] private RectTransform _layoutGroupRoot;
         [SerializeField] private TextMeshProUGUI _numberText;

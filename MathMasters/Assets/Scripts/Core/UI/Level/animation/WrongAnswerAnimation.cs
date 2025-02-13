@@ -34,7 +34,7 @@ namespace MathMasters
             _answerText.text = ANSWER_TEXT;
         }
 
-        public void Show(Question question)
+        public void Show(QuestionDTO question)
         {
             _content.SetActive(true);
             SetUpContext(question);
@@ -42,7 +42,7 @@ namespace MathMasters
             _soundManager.PlayWrongSound();
             LayoutRebuilder.ForceRebuildLayoutImmediate(_layoutRoot);
         }
-        private void SetUpContext(Question question)
+        private void SetUpContext(QuestionDTO question)
         {
             if (question.IsQuestionImage)
             {
@@ -53,7 +53,7 @@ namespace MathMasters
             
         }
 
-        private void SetUpAnswer(Question question)
+        private void SetUpAnswer(QuestionDTO question)
         {
             int index = question.Correct;
             if (question.IsTextAnswers)

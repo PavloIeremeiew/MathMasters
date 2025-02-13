@@ -5,12 +5,10 @@ namespace MathMasters.Entities
     [CreateAssetMenu(fileName = "Question", menuName = "ScriptableObjects/Question")]
     public class Question : ScriptableObject
     {
-        public int Id;
         public string Text;
         public bool IsTextAnswers = true;
         public bool IsQuestionImage = true;
         [Range(0, 3)] public int Correct;
-        public bool IsMistakes;
 
         [SerializeField] private string[] answersText;
         [SerializeField] private Sprite[] answersImage;
