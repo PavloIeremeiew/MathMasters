@@ -3,6 +3,7 @@ using MathMasters.Entities;
 using MathMasters.Services;
 using UnityEngine;
 using Zenject;
+using static UnityEngine.ParticleSystem;
 
 namespace MathMasters.Animation
 {
@@ -18,6 +19,7 @@ namespace MathMasters.Animation
 
 
         private Vector2 _startHeroPos;
+        private Vector2 _startPariclPos = Vector3.up*1.5f;
         private float _endHeroPosX;
         private Tween _delayedCall;
 
@@ -38,6 +40,7 @@ namespace MathMasters.Animation
         public void Show()
         {
             _content.SetActive(true);
+            _particles.transform.position = _startPariclPos;
             _soundManager.PlayCorrectSound();
             PlayAnimation();
         }
@@ -57,8 +60,9 @@ namespace MathMasters.Animation
         }
         private void SetPlayerPos()
         {
-            _startHeroPos = new Vector2(-Screen.width / 2 - _hero.rect.width, _hero.anchoredPosition.y);
-            _endHeroPosX = -Screen.width / 2 + _hero.rect.width * 0.25f;
+            float screenWidth = 720;
+            _startHeroPos = new Vector2(-screenWidth / 2 - _hero.rect.width, _hero.anchoredPosition.y);
+            _endHeroPosX = -screenWidth / 2 + _hero.rect.width * 0.25f;
         }
         private void SetUpCoin()
         {

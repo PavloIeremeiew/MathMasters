@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 namespace MathMasters.Animation
 {
@@ -16,12 +17,14 @@ namespace MathMasters.Animation
         public void Show()
         {
             SetUpPosition();
-            StartHeroAnimation();
+            StartHeroAnimation(); 
+            _particles.transform.position = -5f*Vector3.up;
             _particles.Play();
         }
         private void SetUpPosition()
         {
-            _startPosition = new Vector2(-Screen.width, _hero.anchoredPosition.y);
+            float screenWidth = 720;
+            _startPosition = new Vector2(-screenWidth, _hero.anchoredPosition.y);
             _endPosition = new Vector2(0, _hero.anchoredPosition.y);
         }
         private void StartHeroAnimation()
