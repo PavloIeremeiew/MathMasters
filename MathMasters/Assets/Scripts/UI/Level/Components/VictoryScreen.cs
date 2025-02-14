@@ -19,6 +19,7 @@ namespace MathMasters.UI
         [Inject] private SoundManager _soundManager;
         [Inject] private ISaver _saver;
         [Inject] private ISceneNavigator _sceneNavigator;
+        [Inject] private LevelDataSignal _signal;
 
         private string _timeValue;
         private int _mistakesCount;
@@ -35,7 +36,7 @@ namespace MathMasters.UI
         public void Show(QuestionDTO[] questions, string timer)
         {
             SetUpValues(questions, timer);
-            SetMoney();
+            SetReward();
             Visual();
             _victoryAnimation.Show();
             _soundManager.PlayWinSound();
@@ -47,6 +48,25 @@ namespace MathMasters.UI
             _corectCount = questions.Length - _mistakesCount;
             _money = questions.Length;
         }
+        private void SetReward()
+        {
+            if (!_signal.IsReplay)
+            {
+                LevelUp();
+                SetMoney();
+            }
+            else
+            {
+                _coinCount.text = "0";
+            }
+        }
+
+        private void LevelUp()
+        {
+            int neLevel = 1 + _saver.GetLevel();
+            _saver.SaveLevel(neLevel);
+        }
+
 
         private void Visual()
         {

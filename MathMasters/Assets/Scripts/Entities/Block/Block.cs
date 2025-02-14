@@ -7,6 +7,7 @@ namespace MathMasters.Entities
     [CreateAssetMenu(fileName = "Block", menuName = "ScriptableObjects/Block")]
     public class Block : ScriptableObject
     {
+        public int Id;
         public Level[] Levels;
     }
 }

@@ -3,12 +3,13 @@ using MathMasters.Services;
 using MathMasters.UI;
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace MathMasters.Core
 {
     public class QuestionManager : MonoBehaviour
     {
-        [SerializeField] private Level _step;
+        [Inject] private LevelDataSignal _signal;
         [SerializeField] private UIQuestion _uiQuestion;
 
         private ITimer _timer = new Timer();
@@ -43,7 +44,7 @@ namespace MathMasters.Core
 
         private void SetUpLevel()
         {
-            _qustionArray = _step.SetUpLevel();
+            _qustionArray = _signal.CurrentLevel.SetUpLevel();
             SetQuestion();
         }
         private void SetQuestion()

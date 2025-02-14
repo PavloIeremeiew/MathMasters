@@ -1,3 +1,5 @@
+using MathMasters.Core;
+using MathMasters.Entities;
 using MathMasters.Services;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +14,25 @@ namespace MathMasters.UI
         [SerializeField] private Button _confirmButton;
         [SerializeField] private Button _dismissButton;
 
+        bool _isFinish=false;
+
         [Inject] private SoundManager _soundManager;
         [Inject] private ISceneNavigator _sceneNavigator;
 
         private void Start() {
             SetUpButtons();
+        }
+        private void OnEnable()
+        {
+            QuestionManager.OnLevelComplete += Finish;
+        }
+        private void OnDisable()
+        {
+            QuestionManager.OnLevelComplete -= Finish;
+        }
+        private void Finish(QuestionDTO[] q, string s)
+        {
+            _isFinish = true;
         }
         private void SetUpButtons()
         {
@@ -34,7 +50,14 @@ namespace MathMasters.UI
 
         private void OpenExitMenu()
         {
-            _exitMenu.SetActive(true);
+            if (_isFinish)
+            {
+                Exit();
+            }
+            else
+            {
+                _exitMenu.SetActive(true);
+            }
         }
         private void CloseExitMenu() 
         {

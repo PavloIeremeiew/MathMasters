@@ -1,4 +1,5 @@
 using DG.Tweening;
+using MathMasters.Entities;
 using MathMasters.Services;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,8 @@ namespace MathMasters.Animation
         [SerializeField] private ParticleSystem _particles;
 
         [Inject] private SoundManager _soundManager;
+        [Inject] private LevelDataSignal _signal;
+
 
         private Vector2 _startHeroPos;
         private float _endHeroPosX;
@@ -21,10 +24,12 @@ namespace MathMasters.Animation
 
         private readonly Vector3 _startCoinScale = Vector3.zero;
         private readonly float _endCoinScale = 1;
-
+        
         public void Hide()
         {
             _content.SetActive(false);
+            _hero.DOKill();
+            _coin.DOKill();
         }
 
         public void Show()
@@ -66,17 +71,16 @@ namespace MathMasters.Animation
 
         private void CoinAnim()
         {
+            if (_signal.IsReplay)
+                return;
+
             _coin.DOScale(_endCoinScale, 0.6f).SetEase(Ease.OutBack).SetDelay(0.3f);
             Invoke(nameof(ParticlesAnim), 0.35f);
         }
         private void ParticlesAnim()
-        {
-            if (_content.activeSelf)
-            {
+        {            
                 _soundManager.PlayCoinSound();
                 _particles.Play();
-            }
-
         }
     }
 }

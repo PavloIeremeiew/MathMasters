@@ -1,4 +1,5 @@
 using MathMasters.Core;
+using MathMasters.Entities;
 using UnityEngine;
 
 namespace MathMasters.UI
@@ -17,18 +18,26 @@ namespace MathMasters.UI
         {
             UIQuestion.OnSelected += _continueButton.ReadyForCheck;
             QuestionManager.OnReadyForContinue += _continueButton.ReadyForContinue;
-            QuestionManager.OnLevelComplete += (q, s) => _continueButton.ReadyForEnd();
+            QuestionManager.OnLevelComplete += ReadyForEnd;
             QuestionManager.OnCorrectAnswer += _progressBar.SetProgress;
-            QuestionManager.OnLevelComplete += (q, s) => _progressBar.SetProgress(q.Length);
+            QuestionManager.OnLevelComplete += SetProgress;
         }
 
         private void OnDisable()
         {
             UIQuestion.OnSelected -= _continueButton.ReadyForCheck;
             QuestionManager.OnReadyForContinue -= _continueButton.ReadyForContinue;
-            QuestionManager.OnLevelComplete -= (q, s) => _continueButton.ReadyForEnd();
+            QuestionManager.OnLevelComplete -= ReadyForEnd;
             QuestionManager.OnCorrectAnswer -= _progressBar.SetProgress;
-            QuestionManager.OnLevelComplete -= (q, s) => _progressBar.SetProgress(q.Length);
+            QuestionManager.OnLevelComplete -= SetProgress;
+        }
+        private void ReadyForEnd(QuestionDTO[] q, string s)
+        {
+            _continueButton.ReadyForEnd();
+        }
+        private void SetProgress(QuestionDTO[] q, string s)
+        {
+            _progressBar.SetProgress(q.Length);
         }
     }
 }
