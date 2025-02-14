@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
+  m_Name: Question3
+  m_EditorClassIdentifier: 
+  Text: On the first level, you collected 26 coins, and on the second level, you
+    collected half as many. How many coins did you collect on the second level?
+  IsTextAnswers: 1
+  IsQuestionImage: 1
+  Correct: 2
+  answersText:
+  - 52
+  - 14
+  - 13
+  - 12
+  answersImage: []
+  questionImage: {fileID: 21300000, guid: 78cf80585cb801049bc903031de6982c, type: 3}
