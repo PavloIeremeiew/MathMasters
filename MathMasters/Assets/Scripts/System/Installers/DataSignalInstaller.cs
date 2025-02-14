@@ -6,5 +6,6 @@ public class DataSignalInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<LevelDataSignal>().AsSingle();
+        Container.Bind<BackToMenuDataSignal>().AsSingle();
     }
 }

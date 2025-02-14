@@ -20,11 +20,18 @@ namespace MathMasters.UI
         [Inject] private ISaver _saver;
         [Inject] private ISceneNavigator _sceneNavigator;
         [Inject] private LevelDataSignal _signal;
+        [Inject] private BackToMenuDataSignal _backSignal;
 
         private string _timeValue;
         private int _mistakesCount;
         private int _corectCount;
         private int _money;
+
+        private void Start()
+        {
+            _backSignal.IsUnlockNewLevel = false;
+        }
+
         private void OnEnable()
         {
             ContinueButton.End += _sceneNavigator.OpenMenu;
@@ -65,6 +72,7 @@ namespace MathMasters.UI
         {
             int neLevel = 1 + _saver.GetLevel();
             _saver.SaveLevel(neLevel);
+            _backSignal.IsUnlockNewLevel = true;
         }
 
 

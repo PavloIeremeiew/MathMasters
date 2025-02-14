@@ -13,6 +13,7 @@ namespace MathMasters
         [SerializeField] LevelSelectMenu _levelSelect;
         [SerializeField] TextMeshProUGUI _coins;
         [Inject] private LevelDataSignal _signal;
+        [Inject] private BackToMenuDataSignal _dataSignal;
         [Inject] private SoundManager _soundManager;
         [Inject] private ISaver _saver;
 
@@ -36,9 +37,16 @@ namespace MathMasters
                     else
                     {
                         block.SetActive(LevelId, SetNewLeveL, SetOldLeveL);
+                        if (_dataSignal.IsUnlockNewLevel)
+                        {
+                            block.StartAnim(LevelId);
+                        }
                     }
                 }            
             }
+
+            
+
         }
         private void SetNewLeveL(Level level, LevelInfo info)
         {

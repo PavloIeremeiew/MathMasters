@@ -19,6 +19,8 @@ namespace MathMasters.Animation
 
         private Vector2 _startHeroPos;
         private float _endHeroPosX;
+        private Tween _delayedCall;
+
         private readonly Vector3 _startHeroRotation = Vector3.zero;
         private readonly Vector3 _endHeroRotation = new Vector3(0, 0, -15);
 
@@ -30,6 +32,7 @@ namespace MathMasters.Animation
             _content.SetActive(false);
             _hero.DOKill();
             _coin.DOKill();
+            _delayedCall.Kill();
         }
 
         public void Show()
@@ -75,7 +78,7 @@ namespace MathMasters.Animation
                 return;
 
             _coin.DOScale(_endCoinScale, 0.6f).SetEase(Ease.OutBack).SetDelay(0.3f);
-            Invoke(nameof(ParticlesAnim), 0.35f);
+            _delayedCall=DOVirtual.DelayedCall(0.35f, ParticlesAnim);
         }
         private void ParticlesAnim()
         {            

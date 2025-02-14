@@ -1,4 +1,5 @@
 using MathMasters.Entities;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +9,15 @@ namespace MathMasters
     {
         [SerializeField] private Block _block;
         [SerializeField] private LevelButton[] _buttons;
+        [SerializeField] private TextMeshProUGUI _title;
         private UnityAction<Level, LevelInfo> _activeAction;
         private UnityAction<Level, LevelInfo> _doneAction;
         public int Id => _block.Id;
+
+        private void Start()
+        {
+            _title.text = $"BLOCK {Id+1}";
+        }
 
         public void SetDoneAll()
         {
@@ -98,6 +105,16 @@ namespace MathMasters
             {
                 _buttons[i].Lock();
             }
+        }
+        public void StartAnim(int id)
+        {
+            UnityAction action = null;
+            if(id < _buttons.Length)
+            {
+                _buttons[id].BeforUnLockAnim();
+                action = _buttons[id].UnLockAnim;
+            }
+            _buttons[id - 1].DoneAnim(action);
         }
     }
 }

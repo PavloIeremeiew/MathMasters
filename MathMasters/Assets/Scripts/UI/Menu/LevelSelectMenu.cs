@@ -1,3 +1,4 @@
+using MathMasters.Entities;
 using MathMasters.Services;
 using TMPro;
 using UnityEngine;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MathMasters
+namespace MathMasters.Entities
 {
     public struct LevelInfo
     {
