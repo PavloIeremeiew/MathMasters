@@ -11,16 +11,14 @@ namespace MathMasters.UI
 {
     public class UIQuestion : MonoBehaviour
     {
-        private readonly Vector2 IMAGE_MAX_SIZE = new Vector2(520, 360);
+        private readonly Vector2 IMAGE_MAX_SIZE = new Vector2(620, 460);
         public QuestionDTO Question { private get; set; }
 
         [SerializeField] private RectTransform _layoutGroupRoot;
         [SerializeField] private TextMeshProUGUI _numberText;
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Image _image;
-        [SerializeField] private TextMeshProUGUI[] _answersTexts;
-        [SerializeField] private Image[] _answersImages;
-        [SerializeField] private Button[] _answers;
+        [SerializeField] private QuestionButton[] _questionButtons;
 
         [Inject] private SoundManager _soundManager;
         private int selectedAnswerIndex = -1;
@@ -40,10 +38,10 @@ namespace MathMasters.UI
         }
         private void Start()
         {
-            for (int i = 0; i < _answers.Length; i++)
+            for (int i = 0; i < _questionButtons.Length; i++)
             {
                 int index = i;
-                _answers[i].onClick.AddListener(() => SelectAnswer(index));
+                _questionButtons[i].Subscribe(() => SelectAnswer(index));
             }
         }
         private IEnumerator Show()
@@ -81,17 +79,16 @@ namespace MathMasters.UI
         {
             for (int i = 0; i < Question.AnswersText.Length; i++)
             {
-                _answersTexts[i].text = Question.AnswersText[i];
-                _answersTexts[i].gameObject.SetActive(true);
+                _questionButtons[i]
+                    .SetAnswersText(Question.AnswersText[i]);
             }
         }
         private void SetAnswersImages()
         {
             for (int i = 0; i < Question.AnswersImage.Length; i++)
             {
-                _answersImages[i].sprite = Question.AnswersImage[i];
-                _answersImages[i].gameObject.SetActive(true);
-
+                _questionButtons[i]
+                    .SetAnswersImage(Question.AnswersImage[i]);
             }
         }
 
@@ -110,22 +107,11 @@ namespace MathMasters.UI
 
         private void ClearButtons()
         {
-            ClearButtonsText();
-            ClearButtonsImages();
-            HighlightButton(selectedAnswerIndex);
-        }
-        private void ClearButtonsText()
-        {
-            foreach (TextMeshProUGUI tx in _answersTexts)
+            foreach (QuestionButton questionButton in _questionButtons)
             {
-                tx.gameObject.SetActive(false);
-            }
-        }
-        private void ClearButtonsImages()
-        {
-            foreach (Image im in _answersImages)
-            {
-                im.gameObject.SetActive(false);
+                questionButton.HideImage();
+                questionButton.HideText();
+                questionButton.HighlightOff();
             }
         }
 
@@ -146,16 +132,27 @@ namespace MathMasters.UI
         private void SetButtoneffcts(int index)
         {
             _soundManager.PlaySelectSound();
-            HighlightButton(index);
+            SetHighlightButtons(index);
         }
 
-        private void HighlightButton(int index)
+        private void SetHighlightButtons(int index)
         {
-            for (int i = 0; i < _answers.Length; i++)
+            for (int i = 0; i < _questionButtons.Length; i++)
             {
-                Color color = (i == index) ? Color.cyan : Color.white;
-                _answers[i].GetComponent<Image>().color = color;
+                    HighlightButton(i, index);
             }
         }
+        private void HighlightButton(int buttonIndex, int highlightIndex)
+        {
+                if (buttonIndex == highlightIndex)
+                {
+                    _questionButtons[buttonIndex].HighlightOn();
+                }
+                else
+                {
+                    _questionButtons[buttonIndex].HighlightOff();
+                }            
+        }
+
     }
 }

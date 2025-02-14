@@ -1,4 +1,4 @@
-using Unity.VisualScripting.FullSerializer;
+
 using UnityEditor;
 using UnityEngine;
 
@@ -41,7 +41,7 @@ namespace MathMasters.Entities
         {
             if (question.IsQuestionImage)
             {
-                question.QuestionImage = 
+                question.QuestionImage =
                     (Sprite)EditorGUILayout.ObjectField("Question Image", question.QuestionImage, typeof(Sprite), false);
             }
         }
@@ -54,7 +54,7 @@ namespace MathMasters.Entities
             return answersProperty.arraySize;
         }
 
-        private void SetCorrectAnswer(Question question,int answersCount)
+        private void SetCorrectAnswer(Question question, int answersCount)
         {
             question.Correct = Mathf.Clamp(question.Correct, 0, Mathf.Max(answersCount - 1, 0));
             question.Correct = EditorGUILayout.IntSlider("Correct Answer", question.Correct, 0, Mathf.Max(answersCount - 1, 0));

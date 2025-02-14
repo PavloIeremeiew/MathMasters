@@ -1,0 +1,2 @@
+D:\Documentation\UnityProgects\MathMasters\MathMasters\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\Documentation\UnityProgects\MathMasters\MathMasters\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\FramePacing\CMakeLists.txt

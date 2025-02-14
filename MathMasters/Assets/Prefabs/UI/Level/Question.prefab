@@ -1851,21 +1851,11 @@ MonoBehaviour:
   _numberText: {fileID: 8665901246227742108}
   _text: {fileID: 8108440685531185891}
   _image: {fileID: 797059535511343700}
-  _answersTexts:
-  - {fileID: 2011333259848246843}
-  - {fileID: 6295575328930538289}
-  - {fileID: 2424428798754488861}
-  - {fileID: 553387161379793074}
-  _answersImages:
-  - {fileID: 1608054137152048317}
-  - {fileID: 1702090028967835837}
-  - {fileID: 2719389355819975546}
-  - {fileID: 4903588729727001073}
-  _answers:
-  - {fileID: 6582007662020998426}
-  - {fileID: 6413282663866017747}
-  - {fileID: 6881090621506663057}
-  - {fileID: 459719239601236719}
+  _questionButtons:
+  - {fileID: 2281535743454019905}
+  - {fileID: 7397515971311774871}
+  - {fileID: 3773597477453511979}
+  - {fileID: 8974979994286468123}
 --- !u!1 &3920142737331000005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +1983,7 @@ GameObject:
   - component: {fileID: 7355193190337530443}
   - component: {fileID: 2269465153841713740}
   - component: {fileID: 8437209052249211541}
+  - component: {fileID: 3773597477453511979}
   m_Layer: 5
   m_Name: Answer 3
   m_TagString: Untagged
@@ -2163,6 +2154,24 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3773597477453511979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249761839676623282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d263d19cbd2b804abcec40db9ef1ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contenImage: {fileID: 2719389355819975546}
+  _contentText: {fileID: 2424428798754488861}
+  _smallFrame: {fileID: 440453705, guid: 64d8b8bedde15de4885a386239c79498, type: 3}
+  _bigFrame: {fileID: 7334606020097144341, guid: a6ddeae9accd7174c83489835a2b80eb, type: 3}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _highlightColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &6026376776025804670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +2208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -51.85714}
+  m_AnchoredPosition: {x: 210, y: -120.71429}
   m_SizeDelta: {x: 540, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2335907602000671130
@@ -2278,7 +2287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -175.85713}
+  m_AnchoredPosition: {x: 210, y: -313.57144}
   m_SizeDelta: {x: 540, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &667639354069161651
@@ -2400,6 +2409,7 @@ GameObject:
   - component: {fileID: 6687342520378305970}
   - component: {fileID: 552408002192304703}
   - component: {fileID: 1771753719348545539}
+  - component: {fileID: 7397515971311774871}
   m_Layer: 5
   m_Name: Answer 2
   m_TagString: Untagged
@@ -2425,7 +2435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 415, y: -51.85714}
+  m_AnchoredPosition: {x: 415, y: -120.71428}
   m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6314580088892081018
@@ -2570,6 +2580,24 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &7397515971311774871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353888922969210956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d263d19cbd2b804abcec40db9ef1ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contenImage: {fileID: 1702090028967835837}
+  _contentText: {fileID: 6295575328930538289}
+  _smallFrame: {fileID: 673684497, guid: 64d8b8bedde15de4885a386239c79498, type: 3}
+  _bigFrame: {fileID: -5549164246457123297, guid: a6ddeae9accd7174c83489835a2b80eb, type: 3}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _highlightColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &7152930215897722610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,6 +2835,7 @@ GameObject:
   - component: {fileID: 3576764836540984537}
   - component: {fileID: 2003748870260289599}
   - component: {fileID: 484826534137877440}
+  - component: {fileID: 8974979994286468123}
   m_Layer: 5
   m_Name: Answer 4
   m_TagString: Untagged
@@ -2977,6 +3006,24 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &8974979994286468123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415193307667859856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d263d19cbd2b804abcec40db9ef1ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contenImage: {fileID: 4903588729727001073}
+  _contentText: {fileID: 553387161379793074}
+  _smallFrame: {fileID: 1706361139, guid: 64d8b8bedde15de4885a386239c79498, type: 3}
+  _bigFrame: {fileID: 7969481928623392743, guid: a6ddeae9accd7174c83489835a2b80eb, type: 3}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _highlightColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &8810639642996371040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,6 +3039,7 @@ GameObject:
   - component: {fileID: 3755730791772591099}
   - component: {fileID: 5134532032372832698}
   - component: {fileID: 4137457121931160137}
+  - component: {fileID: 2281535743454019905}
   m_Layer: 5
   m_Name: Answer 1
   m_TagString: Untagged
@@ -3017,7 +3065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -51.85714}
+  m_AnchoredPosition: {x: 125, y: -120.71429}
   m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1656479912287118821
@@ -3162,3 +3210,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2281535743454019905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810639642996371040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d263d19cbd2b804abcec40db9ef1ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _contenImage: {fileID: 1608054137152048317}
+  _contentText: {fileID: 2011333259848246843}
+  _smallFrame: {fileID: -1455892961, guid: 64d8b8bedde15de4885a386239c79498, type: 3}
+  _bigFrame: {fileID: -4271134099690858128, guid: a6ddeae9accd7174c83489835a2b80eb, type: 3}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _highlightColor: {r: 0, g: 1, b: 1, a: 1}
