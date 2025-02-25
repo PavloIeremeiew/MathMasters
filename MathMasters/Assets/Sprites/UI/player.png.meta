@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 7526c42b05a9da64793e0febce96d2e1
+guid: 19c358bf904504347932d7fcf3ccdd3e
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 145794230153395915
-    second: NotificationBox_0
-  - first:
-      213: -8137519437505856664
-    second: NotificationBox_1
-  - first:
-      213: -1329151971873094296
-    second: NotificationBox_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,6 +107,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -132,67 +136,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NotificationBox_0
+      name: player_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 444
-        width: 2051
-        height: 1020
+        y: 75
+        width: 861
+        height: 887
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bce38927417f50200800000000000000
-      internalID: 145794230153395915
+      spriteID: 3dffaa4bad3fdbd4287d1a2c725677dd
+      internalID: 1504513320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NotificationBox_1
+      name: player_1
       rect:
         serializedVersion: 2
-        x: 124
-        y: 0
-        width: 855
-        height: 325
+        x: 929
+        y: 48
+        width: 944
+        height: 895
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 86b70ae9f29b11f80800000000000000
-      internalID: -8137519437505856664
+      spriteID: ae452aa406dd8bd4f8ac820af14c6065
+      internalID: 504481422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NotificationBox_2
+      name: player_2
       rect:
         serializedVersion: 2
-        x: 1072
+        x: 1955
         y: 0
-        width: 855
-        height: 325
+        width: 955
+        height: 957
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8658effd257ed8de0800000000000000
-      internalID: -1329151971873094296
+      spriteID: cf5ed22b54d797a4dbeed5b7b0d2b8cc
+      internalID: 861385507
       vertices: []
       indices: 
       edges: []
@@ -201,7 +205,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +215,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NotificationBox_0: 145794230153395915
-      NotificationBox_1: -8137519437505856664
-      NotificationBox_2: -1329151971873094296
+      player_0: 1504513320
+      player_1: 504481422
+      player_2: 861385507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

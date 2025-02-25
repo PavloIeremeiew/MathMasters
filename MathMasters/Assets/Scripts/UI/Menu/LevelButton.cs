@@ -1,6 +1,7 @@
 using DG.Tweening;
 using MathMasters.UI;
 using System;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,6 +19,7 @@ namespace MathMasters
         [SerializeField] private Sprite _active;
         [SerializeField] private Image _unlockAnimImage;
         [SerializeField] private Image _doneAnimImage;
+        [SerializeField] private TextMeshProUGUI _text;
 
         private Image _image;
 
@@ -29,6 +31,7 @@ namespace MathMasters
         public void Active(UnityAction action)
         {
             setActive(action, _active);
+            _text.gameObject.SetActive(true);
         }
 
         public void Lock()
@@ -36,10 +39,12 @@ namespace MathMasters
             _button.onClick.RemoveAllListeners();
             _image.sprite = _lock;
             _button.interactable = false;
+            _text.gameObject.SetActive(false);
         }
         public void Done(UnityAction action)
         {
             setActive(action, _done);
+            _text.gameObject.SetActive(false);
         }
         private void setActive(UnityAction action, Sprite sprite)
         {
@@ -51,6 +56,7 @@ namespace MathMasters
         {
             _unlockAnimImage.fillAmount = 1;
             _unlockAnimImage.gameObject.SetActive(true);
+            _text.gameObject.SetActive(false);
         }
 
         public void UnLockAnim()
@@ -59,6 +65,7 @@ namespace MathMasters
         }
         private void AfterUnlockAnim()
         {
+            _text.gameObject.SetActive(true);
         }
         public void DoneAnim(UnityAction action)
         {

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: f7ae606584139e941af823b9640d7c6e
+guid: a6ddeae9accd7174c83489835a2b80eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7022884558154076834
-    second: 100_0
+      213: -4271134099690858128
+    second: BigButton_0
+  - first:
+      213: -5549164246457123297
+    second: BigButton_1
+  - first:
+      213: 7334606020097144341
+    second: BigButton_2
+  - first:
+      213: 7969481928623392743
+    second: BigButton_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,23 +135,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 100_0
+      name: BigButton_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 6
-        width: 1030
-        height: 1069
+        x: 0
+        y: 905
+        width: 979
+        height: 812
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a2995bfb4c467160800000000000000
-      internalID: 7022884558154076834
+      spriteID: 0795edf6a22e9b4c0800000000000000
+      internalID: -4271134099690858128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButton_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 901
+        width: 979
+        height: 816
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1eff91c4886df2b0800000000000000
+      internalID: -5549164246457123297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButton_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 980
+        height: 812
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516f45b9051c9c560800000000000000
+      internalID: 7334606020097144341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigButton_3
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 979
+        height: 814
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e70e770799499e60800000000000000
+      internalID: 7969481928623392743
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 92615d267db72244da35dcead9245cd0
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BigButton_0: -4271134099690858128
+      BigButton_1: -5549164246457123297
+      BigButton_2: 7334606020097144341
+      BigButton_3: 7969481928623392743
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

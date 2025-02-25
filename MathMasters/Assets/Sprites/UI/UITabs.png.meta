@@ -151,11 +151,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 435
-        width: 771
-        height: 633
+        y: 423
+        width: 749
+        height: 630
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: UITabs_1
       rect:
         serializedVersion: 2
-        x: 970
-        y: 435
+        x: 1014
+        y: 454
         width: 2252
         height: 634
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: UITabs_2
       rect:
         serializedVersion: 2
-        x: 1268
-        y: 180
+        x: 1318
+        y: 215
         width: 139
         height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: UITabs_3
       rect:
         serializedVersion: 2
-        x: 2005
-        y: 179
+        x: 1815
+        y: 223
         width: 182
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: UITabs_4
       rect:
         serializedVersion: 2
-        x: 2784
-        y: 179
-        width: 123
-        height: 128
+        x: 2799
+        y: 200
+        width: 200
+        height: 196
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: UITabs_5
       rect:
         serializedVersion: 2
-        x: 1274
-        y: 3
+        x: 1312
+        y: 53
         width: 148
         height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,12 +282,12 @@ TextureImporter:
       name: UITabs_6
       rect:
         serializedVersion: 2
-        x: 1997
-        y: 0
+        x: 1805
+        y: 54
         width: 199
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: UITabs_7
       rect:
         serializedVersion: 2
-        x: 2784
-        y: 5
-        width: 135
-        height: 141
+        x: 2811
+        y: 1
+        width: 212
+        height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b0099d69c4962bd45a0fd527d96db505
     internalID: 0
     vertices: []
     indices: 
