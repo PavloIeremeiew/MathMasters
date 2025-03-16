@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 26ac514902030cb49a7fce2ce43ace7f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -181837612720711962
+    second: Level 3_0
+  - first:
+      213: -2854342645736358856
+    second: Level 3_1
+  - first:
+      213: 1546923872526875483
+    second: Level 3_2
+  - first:
+      213: 483147584121888651
+    second: Level 3_3
+  - first:
+      213: -844988267288558333
+    second: Level 3_4
+  - first:
+      213: 6092196529071256575
+    second: Level 3_5
+  - first:
+      213: 2582109721281575122
+    second: Level 3_6
+  - first:
+      213: -4192101614161359177
+    second: Level 3_7
+  - first:
+      213: 4672974241137199644
+    second: Level 3_8
+  - first:
+      213: 183742063451755772
+    second: Level 3_9
+  - first:
+      213: 3089971095416192487
+    second: Level 3_10
+  - first:
+      213: -3482774634036677932
+    second: Level 3_11
+  - first:
+      213: -6172652615109227464
+    second: Level 3_12
+  - first:
+      213: -3574883723962850971
+    second: Level 3_13
+  - first:
+      213: 535766592412446893
+    second: Level 3_14
+  - first:
+      213: 7071731411327792850
+    second: Level 3_15
+  - first:
+      213: 7637605979066994520
+    second: Level 3_16
+  - first:
+      213: -8682840959486017913
+    second: Level 3_17
+  - first:
+      213: 3657284126904837864
+    second: Level 3_18
+  - first:
+      213: 6977519212813901377
+    second: Level 3_19
+  - first:
+      213: 42397588010658432
+    second: Level 3_20
+  - first:
+      213: -1882074108000463908
+    second: Level 3_21
+  - first:
+      213: -1021762280345494136
+    second: Level 3_22
+  - first:
+      213: 7405539694436513871
+    second: Level 3_23
+  - first:
+      213: -186830757664828432
+    second: Level 3_24
+  - first:
+      213: 9199421395885776797
+    second: Level 3_25
+  - first:
+      213: -1219673988869610966
+    second: Level 3_26
+  - first:
+      213: 1896347552003966592
+    second: Level 3_27
+  - first:
+      213: 1743828291725541368
+    second: Level 3_28
+  - first:
+      213: -5990475523133469165
+    second: Level 3_29
+  - first:
+      213: -2883333536852227980
+    second: Level 3_30
+  - first:
+      213: -3337366352996677867
+    second: Level 3_31
+  - first:
+      213: -7190336913583851349
+    second: Level 3_32
+  - first:
+      213: -6719039798806299810
+    second: Level 3_33
+  - first:
+      213: 2708472757597244512
+    second: Level 3_34
+  - first:
+      213: -4963281286994501989
+    second: Level 3_35
+  - first:
+      213: -8070481167370691963
+    second: Level 3_36
+  - first:
+      213: 7556409838955643836
+    second: Level 3_37
+  - first:
+      213: -1916011395557931007
+    second: Level 3_38
+  - first:
+      213: 811876174109707480
+    second: Level 3_39
+  - first:
+      213: 2065047564353102565
+    second: Level 3_40
+  - first:
+      213: 2179798089343014594
+    second: Level 3_41
+  - first:
+      213: -5027921476629321744
+    second: Level 3_42
+  - first:
+      213: 8242485250654596907
+    second: Level 3_43
+  - first:
+      213: -6041178784931246174
+    second: Level 3_44
+  - first:
+      213: 7539661952703332186
+    second: Level 3_45
+  - first:
+      213: 8087061766623216783
+    second: Level 3_46
+  - first:
+      213: 1420994389324616905
+    second: Level 3_47
+  - first:
+      213: -1399116819369579767
+    second: Level 3_48
+  - first:
+      213: -8178767000715306250
+    second: Level 3_49
+  - first:
+      213: 1258903158824226233
+    second: Level 3_50
+  - first:
+      213: 1851923386433635222
+    second: Level 3_51
+  - first:
+      213: -6652130505461061199
+    second: Level 3_52
+  - first:
+      213: -6087654435555507739
+    second: Level 3_53
+  - first:
+      213: 8904224031600545986
+    second: Level 3_54
+  - first:
+      213: -245331867804609472
+    second: Level 3_55
+  - first:
+      213: -6908439901687124515
+    second: Level 3_56
+  - first:
+      213: -8525559199608069920
+    second: Level 3_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level 3_0
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 2004
+        width: 553
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16235b820f20e154b985e35be2f71384
+      internalID: 869806164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 1856
+        width: 577
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a05f61f90152a34c80ed8d636a83110
+      internalID: -607266793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1705
+        width: 604
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1905e48ff80e6314d9260030731d664c
+      internalID: -930531844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1553
+        width: 543
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd317d1054c91a45a772203b4a39494
+      internalID: 1390521723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 1412
+        width: 534
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e075777ce3c76409afc980434b2fca
+      internalID: 836583928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_5
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1252
+        width: 602
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a544e15ff4c4bc45ba52d1380de5397
+      internalID: 1062241435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1099
+        width: 597
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9309bf81a62914bbb9922d7af1ca8d
+      internalID: 1700337572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 961
+        width: 599
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f79a0b47502104fab9b63c5916a2f3
+      internalID: 485210835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_8
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 806
+        width: 582
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84030e4db52762448c1e80449633f58
+      internalID: -635559013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354
+        width: 382
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2573a33dd26248b4892e66e6d8e61dad
+      internalID: 589927786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_10
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 367
+        width: 372
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4cd072c4dd79d41ad6ca346609ba77
+      internalID: 1653817217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 377
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18af845a74982974bb2721e52b406e0d
+      internalID: -1620885993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level 3_12
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 0
+        width: 406
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3031645516f06a4e86f1436ffaa58f6
+      internalID: -783378941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 83bdb75cf78e3a24c9ff6b6e9f05924b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Level 3_0: 869806164
+      Level 3_1: -607266793
+      Level 3_10: 1653817217
+      Level 3_11: -1620885993
+      Level 3_12: -783378941
+      Level 3_2: -930531844
+      Level 3_3: 1390521723
+      Level 3_4: 836583928
+      Level 3_5: 1062241435
+      Level 3_6: 1700337572
+      Level 3_7: 485210835
+      Level 3_8: -635559013
+      Level 3_9: 589927786
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
