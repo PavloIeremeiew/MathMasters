@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question3
   m_EditorClassIdentifier: 
-  Text: On the first level, you collected 26 coins, and on the second level, you
-    collected half as many. How many coins did you collect on the second level?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 2
   answersText:
-  - 52
-  - 14
-  - 13
-  - 12
+  - 5
+  - 7
+  - 6
+  - 4
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 78cf80585cb801049bc903031de6982c, type: 3}
+  questionImage: {fileID: -930531844, guid: 26ac514902030cb49a7fce2ce43ace7f, type: 3}

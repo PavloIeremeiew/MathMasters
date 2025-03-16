@@ -20,7 +20,7 @@ MonoBehaviour:
   answersText:
   - 7
   - 3
-  - 5
   - 6
+  - 8
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 909300c51886e784bb984975cddc4412, type: 3}
+  questionImage: {fileID: 1489974713, guid: 1db2a2970b3a0644eb1bc12652d78362, type: 3}

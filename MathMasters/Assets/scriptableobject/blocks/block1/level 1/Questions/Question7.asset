@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question7
   m_EditorClassIdentifier: 
-  Id: 0
-  Text: An ice cream costs 4 R$. Jonathan's father buys 3 ice creams. How much does
-    he need to pay?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 2
   answersText:
-  - 15
-  - 10
+  - 6
   - 12
+  - 16
   - 7
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 8abb011a4049d6940aa9fed1729f6473, type: 3}
+  questionImage: {fileID: -6946938614933887494, guid: 80192ab39081a0a46aa0506bba5002ba, type: 3}

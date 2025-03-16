@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question4
   m_EditorClassIdentifier: 
-  Id: 0
-  Text: Emma has 14 R$. Jake has 9 R$. How many fewer R$ does Jake have than Emma?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
-  Correct: 0
+  Correct: 2
   answersText:
-  - 5
-  - 7
-  - 4
-  - 6
+  - '-'
+  - +
+  - '*'
+  - /
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 7404f5d02eec0044ca08064b9c5a6455, type: 3}
+  questionImage: {fileID: 6523388641176765678, guid: 80192ab39081a0a46aa0506bba5002ba, type: 3}

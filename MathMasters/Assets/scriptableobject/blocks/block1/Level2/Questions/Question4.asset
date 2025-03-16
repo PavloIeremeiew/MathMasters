@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question4
   m_EditorClassIdentifier: 
-  Text: Sam has 23 R$ in his piggy bank. He receives another 10 R$ from his grandfather.
-    How many R$ does he have in his piggy bank now?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 0
   answersText:
-  - 33
-  - 13
+  - 7
+  - 8
   - 10
-  - 35
+  - 4
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 4ac90248cc9580d47a68db3dc954c194, type: 3}
+  questionImage: {fileID: 1556131203, guid: 1db2a2970b3a0644eb1bc12652d78362, type: 3}

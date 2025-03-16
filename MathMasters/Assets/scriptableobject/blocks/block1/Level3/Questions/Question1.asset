@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question1
   m_EditorClassIdentifier: 
-  Text: 12 boys go outside to play basketball. 3 boys are still in class. How many
-    boys are already outside?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 0
   answersText:
-  - 9
+  - 15
   - 11
   - 13
   - 5
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 071189bac9d41284db97eb323b83e9f8, type: 3}
+  questionImage: {fileID: 869806164, guid: 26ac514902030cb49a7fce2ce43ace7f, type: 3}

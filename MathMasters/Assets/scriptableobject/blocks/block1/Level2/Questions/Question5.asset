@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question5
   m_EditorClassIdentifier: 
-  Text: In Sophie's house, there are 13 garlands. In Lika's house, there are 5 garlands.
-    How many fewer garlands are in Lika's house compared to Sophie's?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 3
   answersText:
   - 12
   - 10
-  - 18
   - 8
+  - 7
   answersImage: []
-  questionImage: {fileID: 21300000, guid: b4c5d6c04ca857f4195e78b17aa82ae8, type: 3}
+  questionImage: {fileID: -564960618, guid: 1db2a2970b3a0644eb1bc12652d78362, type: 3}

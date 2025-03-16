@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question8
   m_EditorClassIdentifier: 
-  Text: 4 children take a test. Who has the fewest mistakes?
-  IsTextAnswers: 0
-  IsQuestionImage: 0
+  Text: Complete the equation
+  IsTextAnswers: 1
+  IsQuestionImage: 1
   Correct: 0
-  answersText: []
+  answersText:
+  - 9
+  - 11
+  - 3
+  - 6
   answersImage:
   - {fileID: 21300000, guid: 1cab9fbf75db7f242bc609246efba091, type: 3}
   - {fileID: 21300000, guid: 9f19cae58b3e6614491ec6d86a1e5bed, type: 3}
   - {fileID: 21300000, guid: 48ac750812ddb63459cccea1bbbde603, type: 3}
   - {fileID: 21300000, guid: 34a03142d4bc76f439af7471e99f6a82, type: 3}
-  questionImage: {fileID: 0}
+  questionImage: {fileID: -1885682552, guid: 1db2a2970b3a0644eb1bc12652d78362, type: 3}

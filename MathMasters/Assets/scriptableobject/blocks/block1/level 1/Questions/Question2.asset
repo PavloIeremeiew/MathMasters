@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question2
   m_EditorClassIdentifier: 
-  Id: 0
-  Text: There are 12 apples in a basket. Someone adds 5 more apples. How many apples
-    are now in the basket?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 1
   answersText:
-  - 15
-  - 17
-  - 10
-  - 18
+  - '-'
+  - +
+  - '*'
+  - /
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 8d16480ef545cb949abe7cd6b5418a83, type: 3}
+  questionImage: {fileID: 3053485404851441065, guid: 80192ab39081a0a46aa0506bba5002ba, type: 3}

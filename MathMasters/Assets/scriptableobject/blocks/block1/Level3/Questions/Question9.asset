@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question9
   m_EditorClassIdentifier: 
-  Text: Your character earned 5 XP points in the first run and 9 XP points in the
-    second run. How many XP points did you earn in total?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 3
   answersText:
-  - 17
-  - 13
-  - 4
-  - 14
+  - 5
+  - 6
+  - 7
+  - 8
   answersImage: []
-  questionImage: {fileID: 21300000, guid: fae445251b9c0084d88158dac585728f, type: 3}
+  questionImage: {fileID: -635559013, guid: 26ac514902030cb49a7fce2ce43ace7f, type: 3}

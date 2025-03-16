@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question6
   m_EditorClassIdentifier: 
-  Text: You defeated 4 enemy waves. Each wave had 5 enemies. How many enemies did
-    you defeat in total?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
-  Correct: 1
+  Correct: 2
   answersText:
-  - 9
-  - 20
-  - 1
-  - 16
+  - '-'
+  - +
+  - '*'
+  - /
   answersImage: []
-  questionImage: {fileID: 21300000, guid: 2f8ca777fc2def74c9d7ff043631645a, type: 3}
+  questionImage: {fileID: 1062241435, guid: 26ac514902030cb49a7fce2ce43ace7f, type: 3}

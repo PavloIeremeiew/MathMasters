@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f37d38198d814d9f59bf6a433a25a, type: 3}
   m_Name: Question3
   m_EditorClassIdentifier: 
-  Id: 0
-  Text: Liam buys a book for 15 R$ and a notebook for 8 R$. How much does he spend
-    in total?
+  Text: Complete the equation
   IsTextAnswers: 1
   IsQuestionImage: 1
   Correct: 3
   answersText:
-  - 20
-  - 25
+  - 14
   - 15
-  - 23
+  - 2
+  - 3
   answersImage: []
-  questionImage: {fileID: 21300000, guid: b08f80d91002621469e966029ec7220c, type: 3}
+  questionImage: {fileID: -6909022786691603724, guid: 80192ab39081a0a46aa0506bba5002ba, type: 3}
