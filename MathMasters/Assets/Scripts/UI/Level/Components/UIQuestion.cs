@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using MathMasters.Entities;
 using MathMasters.Services;
 using System;
@@ -30,7 +31,7 @@ namespace MathMasters.UI
 
         private void OnEnable()
         {
-            StartCoroutine(Show());
+            Show().Forget();
         }
         private void OnDisable()
         {
@@ -44,12 +45,14 @@ namespace MathMasters.UI
                 _questionButtons[i].Subscribe(() => SelectAnswer(index));
             }
         }
-        private IEnumerator Show()
+        private async UniTaskVoid Show()
         {
             SetText();
             SetImage();
             SetAnswers();
-            yield return null;
+
+            await UniTask.Yield(); 
+
             LayoutRebuilder.ForceRebuildLayoutImmediate(_layoutGroupRoot);
         }
 
