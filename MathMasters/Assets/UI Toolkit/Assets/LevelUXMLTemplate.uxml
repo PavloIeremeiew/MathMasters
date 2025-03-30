@@ -1,0 +1,4 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Template name="PB" src="project://database/Assets/UI%20Toolkit/Assets/PB.uxml?fileID=9197481963319205126&amp;guid=9df085e9ec1ea104f9786b05a46aeb3e&amp;type=3#PB" />
+    <engine:Instance template="PB" name="PB" style="width: 70%; align-self: center; padding-left: 0; padding-right: 0; max-width: none; align-items: auto; margin-top: 5%; height: 5.5%;" />
+</engine:UXML>
