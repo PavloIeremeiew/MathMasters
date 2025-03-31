@@ -71,3 +71,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /SolarCivilizationProject/Assets/save
+/MathMasters/Assets/Plugins/Zenject/Source/Install/Contexts/ProjectContext.cs
