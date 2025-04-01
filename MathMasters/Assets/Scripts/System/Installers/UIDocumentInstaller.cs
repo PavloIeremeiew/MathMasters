@@ -1,3 +1,4 @@
+using MathMasters;
 using MathMasters.Services;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -10,5 +11,6 @@ public class UIDocumentInstaller : MonoInstaller
     {
         UIDocument uIDocument = Instantiate(_prefab).GetComponent<UIDocument>();
         Container.Bind<UIDocument>().FromInstance(uIDocument).AsSingle();
+        Container.Bind<ProgressBarUI>().FromInstance(new ProgressBarUI(uIDocument)).AsTransient();
     }
 }
