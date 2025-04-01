@@ -72,3 +72,32 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /SolarCivilizationProject/Assets/save
 /MathMasters/Assets/Plugins/Zenject/Source/Install/Contexts/ProjectContext.cs
+
+# 🔒 Firebase API-ключі
+/google-services.json
+/GoogleService-Info.plist
+
+# 🔑 .env файли (ключі, токени)
+.env
+.env.local
+.env.*.local
+
+# 🔐 Unity Cloud Build, локальні файли конфігурації
+*.key
+*.pem
+*.p12
+*.cert
+*.crt
+*.csr
+*.pfx
+
+# 🔑 SSH-ключі
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# 🛠️ Unity User Settings (особисті дані, локальні налаштування)
+UserSettings/
+*.swp
+*.sln.cache
