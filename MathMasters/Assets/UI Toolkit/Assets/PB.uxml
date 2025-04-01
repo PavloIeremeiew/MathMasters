@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/Assets/PBStyle.uss?fileID=7433441132597879392&amp;guid=0811991e953041a43ae4513a9aafa93e&amp;type=3#PBStyle" />
     <VisualElement name="pb" class="progress-container">
         <VisualElement name="progress-bar" class="progress-bar">
-            <VisualElement name="progress-bar" class="progress-bar-glare"/>
+            <VisualElement name="progress-bar-glare" class="progress-bar-glare"/>
         </VisualElement>
     </VisualElement>
 </UXML>
