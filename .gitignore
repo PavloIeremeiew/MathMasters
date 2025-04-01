@@ -101,3 +101,6 @@ id_ed25519*
 UserSettings/
 *.swp
 *.sln.cache
+/MathMasters/Assets/config/google-services.json
+/MathMasters/Assets/config/google-services.json.meta
+/MathMasters/Assets/config.meta
