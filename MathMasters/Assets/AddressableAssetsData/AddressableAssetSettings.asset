@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: a39cf8067df4acc4f866592816755b48
   m_currentHash:
     serializedVersion: 2
-    Hash: 72554f082a40acb428c62eb9b9f5640c
+    Hash: 1431b104ad7c7ec5a069cca8abd27681
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_CatalogRequestsTimeout: 0
@@ -84,11 +84,11 @@ MonoBehaviour:
       m_ProfileName: Remote
       m_Values:
       - m_Id: 1d7476cbae4bf674798315e915d27806
-        m_Value: <undefined>
+        m_Value: 'https://storage.googleapis.com/test_math_app/[BuildTarget]'
       - m_Id: 2fa5af9af61823d43b49ccc7a02b6666
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+        m_Value: <undefined>
       - m_Id: 32f67fd592d4e27418964a09fcb2fe05
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+        m_Value: 'ServerData/[BuildTarget]'
       - m_Id: 4ec41159bac995849a74935682d9e073
         m_Value: 'ServerData/[BuildTarget]'
       - m_Id: f9508857c0ab04d438feb85ab39c1733

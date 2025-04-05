@@ -2178,6 +2178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1105074559}
     m_Modifications:
+    - target: {fileID: 3340612477049395890, guid: 2de2265bd5d0125429ffaacec9654d2d, type: 3}
+      propertyPath: _block
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3726529447050518222, guid: 2de2265bd5d0125429ffaacec9654d2d, type: 3}
       propertyPath: m_Name
       value: BlockMenu
