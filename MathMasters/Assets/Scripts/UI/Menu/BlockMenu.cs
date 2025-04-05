@@ -1,40 +1,57 @@
+using Cysharp.Threading.Tasks;
 using MathMasters.Entities;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
+using Zenject;
 
 namespace MathMasters
 {
     public class BlockMenu : MonoBehaviour
     {
+        [SerializeField] private int _blockId = 0;
         [SerializeField] private Block _block;
         [SerializeField] private LevelButton[] _buttons;
         [SerializeField] private TextMeshProUGUI _title;
         private UnityAction<Level, LevelInfo> _activeAction;
         private UnityAction<Level, LevelInfo> _doneAction;
-        public int Id => _block.Id;
+        public int Id => _blockId;
+
+        [Inject] 
+        public void Init(ILoadRemoteAddressables loadRemote)
+        {
+            loadRemote.LoadAsset<Block>($"Block{_blockId+1}", SetBlock);
+        }
+        private void SetBlock(Block block)
+        {
+            _block = block;
+        }
 
         private void Start()
         {
             _title.text = $"BLOCK {Id+1}";
         }
 
-        public void SetDoneAll()
+        public async void SetDoneAll()
         {
+            await UniTask.WaitUntil(() => _block != null);
             for (int i=0; i< _buttons.Length;i++)
             {
                 SetDone(i);
             }
         }
-        public void SetLockAll()
+        public async void SetLockAll()
         {
+            await UniTask.WaitUntil(() => _block != null);
             foreach (LevelButton button in _buttons)
             {
                 button.Lock();
             }
         }
-        public void SetActive(int id, UnityAction<Level, LevelInfo> activeAction, UnityAction<Level, LevelInfo> doneAction)
+        public async void SetActive(int id, UnityAction<Level, LevelInfo> activeAction, UnityAction<Level, LevelInfo> doneAction)
         {
+            await UniTask.WaitUntil(() => _block != null);
             _activeAction = activeAction;
             _doneAction = doneAction;
 
