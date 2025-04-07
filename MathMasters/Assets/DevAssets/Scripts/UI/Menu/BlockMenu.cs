@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using MathMasters.Entities;
 using TMPro;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using Zenject;
 
@@ -10,40 +9,36 @@ namespace MathMasters
 {
     public class BlockMenu : MonoBehaviour
     {
-        [SerializeField] private int _blockId = 0;
-        [SerializeField] private Block _block;
+        [SerializeField] private int _blockId = 0;       
         [SerializeField] private LevelButton[] _buttons;
         [SerializeField] private TextMeshProUGUI _title;
+
         private UnityAction<Level, LevelInfo> _activeAction;
         private UnityAction<Level, LevelInfo> _doneAction;
-        public int Id => _blockId;
+        public int Id => _blockId; 
+        private Block _block;
 
-        [Inject] 
-        public void Init(ILoadRemoteAddressables loadRemote)
+        [Inject]
+        public async void Init(BlockProvider blockProvider)
         {
-            loadRemote.LoadAsset<Block>($"Block{_blockId+1}", SetBlock);
-        }
-        private void SetBlock(Block block)
-        {
-            _block = block;
+            _block = await blockProvider.Load(_blockId);
         }
 
         private void Start()
         {
-            _title.text = $"BLOCK {Id+1}";
+            _title.text = $"BLOCK {Id + 1}";
         }
 
         public async void SetDoneAll()
         {
             await UniTask.WaitUntil(() => _block != null);
-            for (int i=0; i< _buttons.Length;i++)
+            for (int i = 0; i < _buttons.Length; i++)
             {
                 SetDone(i);
             }
         }
-        public async void SetLockAll()
+        public void SetLockAll()
         {
-            await UniTask.WaitUntil(() => _block != null);
             foreach (LevelButton button in _buttons)
             {
                 button.Lock();
@@ -126,7 +121,7 @@ namespace MathMasters
         public void StartAnim(int id)
         {
             UnityAction action = null;
-            if(id < _buttons.Length)
+            if (id < _buttons.Length)
             {
                 _buttons[id].BeforUnLockAnim();
                 action = _buttons[id].UnLockAnim;
