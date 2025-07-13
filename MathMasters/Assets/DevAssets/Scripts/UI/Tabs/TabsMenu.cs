@@ -6,7 +6,7 @@ namespace MathMasters
 {
     public class TabsMenu : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _tabs;
+        [SerializeField] private Tab[] _tabs;
         [SerializeField] private GameObject _hightlight;
         [SerializeField] private TabButton[] _buttons;
 
@@ -38,8 +38,8 @@ namespace MathMasters
 
         private void CloseAllTabs() 
         {
-            foreach (GameObject tab in _tabs) {
-                tab.SetActive(false);
+            foreach (var tab in _tabs) {
+                tab.gameObject.SetActive(false);
             }
         }
         private void ActiveAllButtons()
@@ -52,7 +52,7 @@ namespace MathMasters
 
         private void SetUpCurrentTab(int index)
         {
-            _tabs[index].SetActive(true);
+            _tabs[index].gameObject.SetActive(true);
             _buttons[index].Deactivate();
         }
 
