@@ -54,6 +54,7 @@ namespace MathMasters
         {
             _tabs[index].gameObject.SetActive(true);
             _buttons[index].Deactivate();
+            _tabs[index].OnTabSelected();
         }
 
         private void MoveHightlight(int index)

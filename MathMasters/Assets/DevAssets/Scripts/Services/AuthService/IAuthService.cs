@@ -8,8 +8,9 @@ namespace MathMasters
         bool IsLoggedIn { get; }
 
         Task InitializeAsync();
-        Task RegisterAsync(string email, string password);
-        Task LoginAsync(string email, string password);
+        Task<bool> TryRegisterOrLoginAsync(string email, string password);
+        Task<bool> TryRegisterAsync(string email, string password);
+        Task<bool> TryLoginAsync(string email, string password);
         void Logout();
     }
 }

@@ -1,7 +1,6 @@
 using Firebase;
 using Firebase.Auth;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace MathMasters
 {
@@ -24,16 +23,42 @@ namespace MathMasters
             UpdateCurrentUser();
         }
 
-        public async Task RegisterAsync(string email, string password)
+        public async Task<bool> TryRegisterOrLoginAsync(string email, string password)
         {
-            var result = await _auth.CreateUserWithEmailAndPasswordAsync(email, password);
-            UpdateCurrentUser();
+            if (await TryRegisterAsync(email, password))
+                return true; 
+         
+            return await TryLoginAsync(email, password);
         }
 
-        public async Task LoginAsync(string email, string password)
+        public async Task<bool> TryRegisterAsync(string email, string password)
         {
-            var result = await _auth.SignInWithEmailAndPasswordAsync(email, password);
-            UpdateCurrentUser();
+            try
+            {
+                await _auth.CreateUserWithEmailAndPasswordAsync(email, password);
+                await _auth.SignInWithEmailAndPasswordAsync(email, password);
+                return true;
+            }
+            catch (FirebaseException e)
+            {
+                UnityEngine.Debug.LogWarning($"Registration failed: {e.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> TryLoginAsync(string email, string password)
+        {
+            try
+            {
+                await _auth.SignInWithEmailAndPasswordAsync(email, password);
+                UpdateCurrentUser();
+                return true;
+            }
+            catch (FirebaseException e)
+            {
+                UnityEngine.Debug.LogWarning($"Login failed: {e.Message}");
+                return false;
+            }
         }
 
         public void Logout()
