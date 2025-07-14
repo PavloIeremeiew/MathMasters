@@ -1,3 +1,4 @@
+using UnityEngine;
 using Zenject;
 
 namespace MathMasters
@@ -5,6 +6,9 @@ namespace MathMasters
     public class ScoresTab : Tab
     {
         private IAuthService _auth;
+
+        [SerializeField]
+        private LoginScreen _loginWidget;
 
         [Inject]
         public async void Init(IAuthService auth)
@@ -17,7 +21,7 @@ namespace MathMasters
         {
             if (!_auth.IsLoggedIn)
             {
-                // show login/register UI
+                _loginWidget.gameObject.SetActive(true);
             }
             else
             {
