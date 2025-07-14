@@ -110,3 +110,5 @@ UserSettings/
 /MathMasters/Assets/config/StreamingAssets/google-services-desktop.json
 /MathMasters/Assets/config/StreamingAssets/google-services-desktop.json.meta
 /MathMasters/.vscode
+MathMasters/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-12_10_1.bundle
+MathMasters/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-12_10_1.so
