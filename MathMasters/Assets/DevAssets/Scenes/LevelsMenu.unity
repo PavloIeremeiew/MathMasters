@@ -2785,6 +2785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948045fe51fb7234fa4d15a90a56acb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _emailInput: {fileID: 1263048217}
+  _passwordInput: {fileID: 244396994}
+  _login: {fileID: 1184370834}
 --- !u!1 &1504390205
 GameObject:
   m_ObjectHideFlags: 0
