@@ -1,6 +1,7 @@
 using MathMasters.Entities;
 using MathMasters.Services;
 using System.Linq;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -17,10 +18,10 @@ namespace MathMasters
         [Inject] private SoundManager _soundManager;
         [Inject] private ISaver _saver;
 
-        private void Start()
+        public async void Init()
         {
-            int blockId = _saver.GetBlock();
-            int LevelId = _saver.GetLevel();
+            int blockId = await _saver.GetBlock();
+            int LevelId = await _saver.GetLevel();
             _coins.text = _saver.GetMoney().ToString();
             foreach (BlockMenu block in _blocks) 
             {

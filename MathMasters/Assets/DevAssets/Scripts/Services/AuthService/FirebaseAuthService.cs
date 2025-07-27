@@ -1,18 +1,22 @@
+using Cysharp.Threading.Tasks;
 using Firebase;
 using Firebase.Auth;
+using System;
 using System.Threading.Tasks;
+using Zenject;
 
 namespace MathMasters
 {
-    public class FirebaseAuthService : IAuthService
+    public class FirebaseAuthService : IAuthService,  IInitializable
     {
         private FirebaseAuth _auth;
         private AuthUser _currentUser;
 
         public AuthUser CurrentUser => _currentUser;
         public bool IsLoggedIn => _currentUser != null;
+        public event Action<AuthUser> OnUserChanged;
 
-        public async Task InitializeAsync()
+        public async void Initialize()
         {
             var status = await FirebaseApp.CheckAndFixDependenciesAsync();
 
@@ -23,7 +27,7 @@ namespace MathMasters
             UpdateCurrentUser();
         }
 
-        public async Task<bool> TryRegisterOrLoginAsync(string email, string password)
+        public async UniTask<bool> TryRegisterOrLoginAsync(string email, string password)
         {
             if (await TryRegisterAsync(email, password))
                 return true; 
@@ -31,7 +35,7 @@ namespace MathMasters
             return await TryLoginAsync(email, password);
         }
 
-        public async Task<bool> TryRegisterAsync(string email, string password)
+        public async UniTask<bool> TryRegisterAsync(string email, string password)
         {
             try
             {
@@ -46,7 +50,7 @@ namespace MathMasters
             }
         }
 
-        public async Task<bool> TryLoginAsync(string email, string password)
+        public async UniTask<bool> TryLoginAsync(string email, string password)
         {
             try
             {
@@ -81,6 +85,7 @@ namespace MathMasters
             {
                 _currentUser = null;
             }
+            OnUserChanged?.Invoke(_currentUser);
         }
     }
 }

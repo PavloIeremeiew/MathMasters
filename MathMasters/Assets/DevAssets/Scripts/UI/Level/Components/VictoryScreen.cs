@@ -68,9 +68,9 @@ namespace MathMasters.UI
             }
         }
 
-        private void LevelUp()
+        private async void LevelUp()
         {
-            int neLevel = 1 + _saver.GetLevel();
+            int neLevel = 1 + await _saver.GetLevel();
             _saver.SaveLevel(neLevel);
             _backSignal.IsUnlockNewLevel = true;
         }
@@ -81,10 +81,10 @@ namespace MathMasters.UI
             SetInfo();
             _content.SetActive(true);
         }
-        private void SetMoney()
+        private async void SetMoney()
         {
             _coinCount.text = _money.ToString();
-            int newManeyValue = _money + _saver.GetMoney();
+            int newManeyValue =  _money +  await _saver.GetMoney();
             _saver.SaveMoney(newManeyValue);
         }
         private void SetInfo()
