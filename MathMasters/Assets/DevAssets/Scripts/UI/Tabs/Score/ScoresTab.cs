@@ -1,3 +1,4 @@
+using MathMasters.Services;
 using System;
 using UnityEngine;
 using Zenject;
@@ -6,7 +7,8 @@ namespace MathMasters
 {
     public class ScoresTab : Tab
     {
-        [Inject] private IAuthService _auth;
+        [Inject] private readonly IAuthService _auth;
+        [Inject] private readonly ISaver _saver;
 
         [SerializeField]
         private LoginScreen _loginWidget;
@@ -52,9 +54,11 @@ namespace MathMasters
 
         }
         
-        public void ShowScoreScreen()
+        public async void ShowScoreScreen()
         {
-            _scoreScreen.gameObject.SetActive(true);
+            var coins = await _saver.GetMoney();
+            var level = await _saver.GetLevel();
+            _scoreScreen.Show(coins, level);
         }
     }
 }

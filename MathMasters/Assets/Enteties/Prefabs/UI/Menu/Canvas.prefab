@@ -2783,6 +2783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 920ba50d68eee5748b43cfdf93d1bfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinsText: {fileID: 7358439310730637949}
+  _levelsText: {fileID: 7433767550988141671}
 --- !u!1 &8133858016851492633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings will be available later
+  m_text: Settings will be not available
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 01a90e1f796366942b15b62fea0e8f35, type: 2}
   m_sharedMaterial: {fileID: 6268688645926008310, guid: 01a90e1f796366942b15b62fea0e8f35, type: 2}

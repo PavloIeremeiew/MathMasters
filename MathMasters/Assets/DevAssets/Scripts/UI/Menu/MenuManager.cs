@@ -18,8 +18,14 @@ namespace MathMasters
         [Inject] private SoundManager _soundManager;
         [Inject] private ISaver _saver;
 
+        private bool _isInit = false;
+
         public async void Init()
         {
+            if (_isInit) return;
+
+            _isInit = true;
+
             int blockId = await _saver.GetBlock();
             int LevelId = await _saver.GetLevel();
             _coins.text = _saver.GetMoney().ToString();
