@@ -4,15 +4,16 @@ using Firebase.Database;
 using Firebase.Extensions;
 using MathMasters.Services;
 using System;
-using System.Threading.Tasks;
+using System.Linq;
 using UnityEngine;
 using Zenject;
 
 namespace MathMasters
 {
-    public class FirebaseSaver : ISaver,  IInitializable
+    public class FirebaseSaver : ISaver, IInitializable
     {
         private const string USER_KEY = "users";
+        private const string NAME_KEY = "name";
         private const string MONEY_KEY = "money";
         private const string LEVEL_KEY = "level";
         private const string BLOCK_KEY = "block";
@@ -25,6 +26,7 @@ namespace MathMasters
         private readonly SaverWithPlayerPrefs _fallbackSaver = new();
         private DatabaseReference _db;
         private string _userId;
+        private string _name;
 
         private int _cachedMoney;
         private int _cachedLevel;
@@ -47,7 +49,8 @@ namespace MathMasters
         private void OnUserChanged(AuthUser user)
         {
             _userId = user.UserId;
-
+            _name = user.Email.Split('@').First();
+         
             if (string.IsNullOrEmpty(_userId))
             {
                 Debug.LogError("FirebaseSaver: No user is currently signed in.");
@@ -76,6 +79,11 @@ namespace MathMasters
                 var cloudLastUpdate = snapshot.Child(LAST_UPDATE_KEY).Exists
                     ? DateTime.Parse(snapshot.Child(LAST_UPDATE_KEY).Value.ToString())
                     : DateTime.MinValue;
+
+                if (!snapshot.Child(NAME_KEY).Exists)
+                {
+                    Save(NAME_KEY, _name);
+                }
 
                 var localLastUpdate = _fallbackSaver.GetLastUpdate();
 
@@ -128,13 +136,13 @@ namespace MathMasters
             _fallbackSaver.SaveLevel(number);
         }
 
-        public async UniTask<int> GetLevel() 
+        public async UniTask<int> GetLevel()
         {
             while (_isInitiallizing)
             {
                 await UniTask.DelayFrame(1);
-            } 
-            return _cachedLevel; 
+            }
+            return _cachedLevel;
         }
 
         public void SaveBlock(int number)
@@ -153,7 +161,7 @@ namespace MathMasters
             return _cachedBlock;
         }
 
-        private void Save(string key, int value)
+        private void Save<T>(string key, T value)
         {
             _lastUpdate = DateTime.UtcNow;
             _db.Child(USER_KEY).Child(_userId).Child(key).SetValueAsync(value);
