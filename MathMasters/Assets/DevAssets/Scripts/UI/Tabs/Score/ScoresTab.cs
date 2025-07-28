@@ -1,5 +1,6 @@
 using MathMasters.Services;
 using System;
+using System.Linq;
 using UnityEngine;
 using Zenject;
 
@@ -9,6 +10,7 @@ namespace MathMasters
     {
         [Inject] private readonly IAuthService _auth;
         [Inject] private readonly ISaver _saver;
+        [Inject] private readonly ILeaderboardLoader _leaderboardLoader;
 
         [SerializeField]
         private LoginScreen _loginWidget;
@@ -58,7 +60,10 @@ namespace MathMasters
         {
             var coins = await _saver.GetMoney();
             var level = await _saver.GetLevel();
-            _scoreScreen.Show(coins, level);
+            var list = await _leaderboardLoader.LoadTopPlayersAsync();
+            var playerName = _auth.CurrentUser.Name;
+            var playerNumber = list.FindIndex(x => x.name == playerName);
+            _scoreScreen.Show(coins, level, list, playerNumber);
         }
     }
 }

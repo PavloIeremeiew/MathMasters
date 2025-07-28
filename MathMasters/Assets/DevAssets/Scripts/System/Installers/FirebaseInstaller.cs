@@ -9,5 +9,6 @@ public class FirebaseInstaller : MonoInstaller
         Container.QueueForInject(this);
         Container.BindInterfacesAndSelfTo<FirebaseAuthService>().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<FirebaseSaver>().AsSingle().NonLazy();
+        Container.BindInterfacesAndSelfTo<FirebaseLeaderboardLoader>().AsSingle().NonLazy();
     }
 }

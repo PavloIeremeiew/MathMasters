@@ -10,15 +10,17 @@ using Zenject;
 
 namespace MathMasters
 {
+    public static class DBConstants
+    {
+        public const string USER_KEY = "users";
+        public const string NAME_KEY = "name";
+        public const string MONEY_KEY = "money";
+        public const string LEVEL_KEY = "level";
+        public const string BLOCK_KEY = "block";
+        public const string LAST_UPDATE_KEY = "lastUpdate";
+    }
     public class FirebaseSaver : ISaver, IInitializable
     {
-        private const string USER_KEY = "users";
-        private const string NAME_KEY = "name";
-        private const string MONEY_KEY = "money";
-        private const string LEVEL_KEY = "level";
-        private const string BLOCK_KEY = "block";
-        private const string LAST_UPDATE_KEY = "lastUpdate";
-
         private bool _isInitiallizing;
 
         [Inject] private readonly IAuthService _authService;
@@ -49,7 +51,7 @@ namespace MathMasters
         private void OnUserChanged(AuthUser user)
         {
             _userId = user.UserId;
-            _name = user.Email.Split('@').First();
+            _name = user.Name;
          
             if (string.IsNullOrEmpty(_userId))
             {
@@ -62,7 +64,7 @@ namespace MathMasters
 
         private void LoadAll()
         {
-            _db.Child(USER_KEY).Child(_userId).GetValueAsync().ContinueWithOnMainThread(task =>
+            _db.Child(DBConstants.USER_KEY).Child(_userId).GetValueAsync().ContinueWithOnMainThread(task =>
             {
                 if (task.IsFaulted || task.IsCanceled)
                 {
@@ -73,16 +75,16 @@ namespace MathMasters
 
                 var snapshot = task.Result;
 
-                var cloudMoney = snapshot.Child(MONEY_KEY).Exists ? int.Parse(snapshot.Child(MONEY_KEY).Value.ToString()) : 0;
-                var cloudLevel = snapshot.Child(LEVEL_KEY).Exists ? int.Parse(snapshot.Child(LEVEL_KEY).Value.ToString()) : 0;
-                var cloudBlock = snapshot.Child(BLOCK_KEY).Exists ? int.Parse(snapshot.Child(BLOCK_KEY).Value.ToString()) : 0;
-                var cloudLastUpdate = snapshot.Child(LAST_UPDATE_KEY).Exists
-                    ? DateTime.Parse(snapshot.Child(LAST_UPDATE_KEY).Value.ToString())
+                var cloudMoney = snapshot.Child(DBConstants.MONEY_KEY).Exists ? int.Parse(snapshot.Child(DBConstants.MONEY_KEY).Value.ToString()) : 0;
+                var cloudLevel = snapshot.Child(DBConstants.LEVEL_KEY).Exists ? int.Parse(snapshot.Child(DBConstants.LEVEL_KEY).Value.ToString()) : 0;
+                var cloudBlock = snapshot.Child(DBConstants.BLOCK_KEY).Exists ? int.Parse(snapshot.Child(DBConstants.BLOCK_KEY).Value.ToString()) : 0;
+                var cloudLastUpdate = snapshot.Child(DBConstants.LAST_UPDATE_KEY).Exists
+                    ? DateTime.Parse(snapshot.Child(DBConstants.LAST_UPDATE_KEY).Value.ToString())
                     : DateTime.MinValue;
 
-                if (!snapshot.Child(NAME_KEY).Exists)
+                if (!snapshot.Child(DBConstants.NAME_KEY).Exists)
                 {
-                    Save(NAME_KEY, _name);
+                    Save(DBConstants.NAME_KEY, _name);
                 }
 
                 var localLastUpdate = _fallbackSaver.GetLastUpdate();
@@ -116,7 +118,7 @@ namespace MathMasters
         public void SaveMoney(int amount)
         {
             _cachedMoney = amount;
-            Save(MONEY_KEY, amount);
+            Save(DBConstants.MONEY_KEY, amount);
             _fallbackSaver.SaveMoney(amount);
         }
 
@@ -132,7 +134,7 @@ namespace MathMasters
         public void SaveLevel(int number)
         {
             _cachedLevel = number;
-            Save(LEVEL_KEY, number);
+            Save(DBConstants.LEVEL_KEY, number);
             _fallbackSaver.SaveLevel(number);
         }
 
@@ -148,7 +150,7 @@ namespace MathMasters
         public void SaveBlock(int number)
         {
             _cachedBlock = number;
-            Save(BLOCK_KEY, number);
+            Save(DBConstants.BLOCK_KEY, number);
             _fallbackSaver.SaveBlock(number);
         }
 
@@ -164,16 +166,16 @@ namespace MathMasters
         private void Save<T>(string key, T value)
         {
             _lastUpdate = DateTime.UtcNow;
-            _db.Child(USER_KEY).Child(_userId).Child(key).SetValueAsync(value);
-            _db.Child(USER_KEY).Child(_userId).Child(LAST_UPDATE_KEY).SetValueAsync(_lastUpdate.ToString("o"));
+            _db.Child(DBConstants.USER_KEY).Child(_userId).Child(key).SetValueAsync(value);
+            _db.Child(DBConstants.USER_KEY).Child(_userId).Child(DBConstants.LAST_UPDATE_KEY).SetValueAsync(_lastUpdate.ToString("o"));
             _fallbackSaver.SaveLastUpdate(_lastUpdate);
         }
 
         private void SaveAllToFirebase()
         {
-            Save(MONEY_KEY, _cachedMoney);
-            Save(LEVEL_KEY, _cachedLevel);
-            Save(BLOCK_KEY, _cachedBlock);
+            Save(DBConstants.MONEY_KEY, _cachedMoney);
+            Save(DBConstants.LEVEL_KEY, _cachedLevel);
+            Save(DBConstants.BLOCK_KEY, _cachedBlock);
         }
     }
 }
